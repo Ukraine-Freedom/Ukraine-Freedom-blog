@@ -3,6 +3,21 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
+const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
+
+const { results } = await fetch(
+	`https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
+		apiKey: builderApiPublicKey,
+		fields: ["data.slug", "data.title"].join(","),
+		cachebust: "true",
+	}).toString()}`
+)
+	.then((res) => res.json())
+	.catch();
+
+console.log(results)
 ---
 
 <!doctype html>
