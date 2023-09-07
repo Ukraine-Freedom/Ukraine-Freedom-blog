@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
-const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
+const builderModel = import.meta.env.BUILDER_NEWS_MODEL;
 
 const { results: posts } = await fetch(
   `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
