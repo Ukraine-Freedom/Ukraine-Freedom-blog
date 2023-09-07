@@ -11,7 +11,7 @@ const builderModel = import.meta.env.BUILDER_NEWS_MODEL;
 const { results: posts } = await fetch(
   `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
     apiKey: builderApiPublicKey,
-    fields: ["data.slug", "data.title"].join(","),
+    // fields: ["data.slug", "data.title"].join(","),
     cachebust: "true",
   }).toString()}`
 )
