@@ -1,4 +1,7 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 const builderAPIPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOME_MODEL;
 ---
@@ -8,12 +11,12 @@ const builderModel = import.meta.env.BUILDER_HOME_MODEL;
     <title>Preview for builder.io</title>
 </head>
 <body>
-<header>This is your header</header>
-
-<builder-component model={builderModel} api-key={builderAPIPublicKey}
-></builder-component>
-<script async src="https://cdn.builder.io/js/webcomponents"></script>
-
-<footer>This is your footer</footer>
+<Header title='News' />
+<main>
+  <builder-component model={builderModel} api-key={builderAPIPublicKey}
+  ></builder-component>
+  <script async src="https://cdn.builder.io/js/webcomponents"></script>
+</main>
+<Footer />
 </body>
 </html>
