@@ -12,11 +12,11 @@ const builderModel = import.meta.env.BUILDER_HOME_MODEL;
 </head>
 <body>
 <Header title='News' />
-<main>
-  <builder-component model={builderModel} api-key={builderAPIPublicKey}
-  ></builder-component>
-  <script async src="https://cdn.builder.io/js/webcomponents"></script>
-</main>
+
+<builder-component model={builderModel} api-key={builderAPIPublicKey}
+></builder-component>
+<script async src="https://cdn.builder.io/js/webcomponents"></script>
+
 <Footer />
 </body>
 </html>
