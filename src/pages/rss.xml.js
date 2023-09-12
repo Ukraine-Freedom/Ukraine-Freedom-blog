@@ -17,9 +17,15 @@ export async function GET(context) {
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.slug}/`,
-		})),
+		items: posts.map((post) => {
+      return {
+        title: post.data.title,
+        description: post.data.description,
+        pubDate: post.data.publishDate,
+        updatedDate: post.lastUpdated,
+        coverImage: post.data.coverimage,
+        link: `/blog/${post.data.slug}/`,
+      }
+    }),
 	});
 }
