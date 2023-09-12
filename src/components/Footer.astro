@@ -3,17 +3,27 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Ukraine Freedom Project. All rights reserved. <br/>
-  The San Diego County Prosperity Foundation is the 501(c)(3) fiscal sponsor of the Ukraine Freedom Project.
+  <div>
+    <div class="logo"></div>
+  </div>
+  <p>
+    &copy; {today.getFullYear()} Ukraine Freedom Project. All rights reserved. <br/>
+    The San Diego County Prosperity Foundation is the 501(c)(3) fiscal sponsor of the Ukraine Freedom Project.
+  </p>
 	<div class="social-links">
+    <a href="https://www.dropbox.com/s/51oxslh06nvjzo9/Foundation%20Determination%20Letter.pdf?dl=0">
+      IRS Determination Letter
+    </a>
+    <a href="/privacy-policy">Privacy policy</a>
 	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
+		padding: 2em 1em 1em 1em;
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+    display: flex;
 	}
 	.social-links {
 		display: flex;

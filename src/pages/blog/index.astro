@@ -11,7 +11,6 @@ const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
 const { results: posts } = await fetch(
   `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
     apiKey: builderApiPublicKey,
-    // fields: ["data.slug", "data.title"].join(","),
     cachebust: "true",
   }).toString()}`
 )
@@ -101,11 +100,11 @@ const { results: posts } = await fetch(
 					{
 						posts.map((post: any) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+								<a href={`/blog/${post.data.slug}/`}>
+									<img width={720} height={360} src={post.data.coverimage} alt={post.data.alttextimage} />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={new Date(post.lastUpdated)} />
+										<FormattedDate date={new Date(post.data.datePublished ?? post.lastUpdated)} />
 									</p>
 								</a>
 							</li>

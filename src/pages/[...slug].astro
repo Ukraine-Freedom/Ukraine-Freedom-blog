@@ -1,20 +1,40 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../layouts/BlogPost.astro';
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
-}
-type Props = CollectionEntry<'blog'>;
+  const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
+  const builderModel = import.meta.env.BUILDER_PAGE_MODEL;
 
-const post = Astro.props;
-const { Content } = await post.render();
+  const { results: pages } = await fetch(
+    `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
+      apiKey: builderApiPublicKey,
+      cachebust: "true",
+    }).toString()}`
+  )
+    .then((res) => res.json())
+    .catch();
+
+  return pages.map(post => ({
+    params: { slug: post.data.url },
+    props: post,
+  }))
+}
+const { data: { title, description, content }} = Astro.props;
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<!doctype html>
+<html lang="en">
+<head>
+  <BaseHead title={title} description={description} />
+</head>
+<body>
+<Header title={title} />
+<main>
+  <Fragment set:html={content} />
+</main>
+<Footer />
+</body>
+</html>
+
