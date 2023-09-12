@@ -7,7 +7,7 @@ import BlogBottomSection from '../components/BlogBottomSection.astro';
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
 
-const { data: { title, description, html } } = await fetch(
+const data = await fetch(
 	`https://cdn.builder.io/api/v3/html/${builderModel}?${new URLSearchParams({
 		apiKey: builderApiPublicKey,
 		cachebust: "true",
@@ -15,6 +15,7 @@ const { data: { title, description, html } } = await fetch(
 )
 	.then((res) => res.json())
 	.catch();
+console.log(data)
 ---
 
 <!doctype html>
