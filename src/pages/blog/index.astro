@@ -11,6 +11,7 @@ const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
 const { results: posts } = await fetch(
   `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
     apiKey: builderApiPublicKey,
+    'sort.data.publishDate': -1,
     cachebust: "true",
   }).toString()}`
 )
@@ -104,7 +105,7 @@ const { results: posts } = await fetch(
 									<img width={720} height={360} src={post.data.coverimage} alt={post.data.alttextimage} />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={new Date(post.data.datePublished ?? post.lastUpdated)} />
+										<FormattedDate date={new Date(post.data.publishDate ?? post.lastUpdated)} />
 									</p>
 								</a>
 							</li>

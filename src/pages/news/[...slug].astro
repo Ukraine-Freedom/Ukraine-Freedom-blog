@@ -1,5 +1,5 @@
 ---
-import BlogPost from '../../layouts/BlogPost.astro';
+import NewsPost from '../../layouts/NewsPost.astro';
 
 export async function getStaticPaths() {
   const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
@@ -23,4 +23,4 @@ export async function getStaticPaths() {
 const { data, lastUpdated } = Astro.props;
 ---
 
-<BlogPost { ...{data: data, lastUpdated }} />
+<NewsPost { ...{data: data, lastUpdated }} />

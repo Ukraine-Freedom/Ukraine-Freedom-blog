@@ -11,6 +11,7 @@ const builderModel = import.meta.env.BUILDER_NEWS_MODEL;
 const { results: posts } = await fetch(
   `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
     apiKey: builderApiPublicKey,
+    'sort.data.publishDate': -1,
     cachebust: "true",
   }).toString()}`
 )
@@ -25,6 +26,10 @@ const { results: posts } = await fetch(
   <style>
     main {
       width: 960px;
+    }
+    main h3 {
+      text-align: center;
+      padding-bottom: 1em;
     }
     ul {
       display: flex;
@@ -95,16 +100,14 @@ const { results: posts } = await fetch(
 <body>
 <Header />
 <main>
+  <h3>Ukraine Freedom Project in the news</h3>
   <section>
     <ul>
       {posts.map((post: any) => (
         <li>
-          <a href={`/news/${post.slug}/`} target={post.linktargetblank ? '_blank' : '_self'}>
+          <a href={post.data.link ?? `/news/${post.data.slug}/`} target={post.data.linktargetblank ? '_blank' : '_self'}>
             <img width={720} height={360} src={post.data.coverimage} alt={post.data.alttextimage} />
             <h4 class="title">{post.data.title}</h4>
-            <p class="date">
-              <FormattedDate date={new Date(post.lastUpdated)} />
-            </p>
           </a>
         </li>
       ))}
