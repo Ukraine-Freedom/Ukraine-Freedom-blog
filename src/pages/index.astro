@@ -6,8 +6,8 @@ import Footer from '../components/Footer.astro';
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
 
-const { html: postHTML, data: { title, description, scriptcode } } = await fetch(
-	`https://cdn.builder.io/api/v1/qwik/${builderModel}?${new URLSearchParams({
+const { data: { title, description, content } } = await fetch(
+	`https://cdn.builder.io/api/v3/html/${builderModel}?${new URLSearchParams({
 		apiKey: builderApiPublicKey,
 		cachebust: "true",
 	}).toString()}`
@@ -24,8 +24,7 @@ const { html: postHTML, data: { title, description, scriptcode } } = await fetch
 	<body>
 		<Header title={title} />
 		<main>
-			<Fragment set:html={postHTML} />
-			<script is:inline>{scriptcode}</script>
+			<Fragment set:html={content} />
 		</main>
 		<Footer />
 	</body>
