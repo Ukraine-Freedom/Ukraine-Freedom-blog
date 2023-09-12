@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
   const builderModel = import.meta.env.BUILDER_PAGE_MODEL;
 
-  const { results: pages } = await fetch(
+  const data = await fetch(
     `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
       apiKey: builderApiPublicKey,
       cachebust: "true",
@@ -15,8 +15,9 @@ export async function getStaticPaths() {
   )
     .then((res) => res.json())
     .catch();
+  console.log(data)
 
-  return pages.map(post => ({
+  return data.results.map(post => ({
     params: { slug: post.data.url },
     props: post,
   }))
