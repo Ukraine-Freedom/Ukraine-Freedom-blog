@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
 
-const { data: { title, description, content } } = await fetch(
+const { data: { title, description, content, html } } = await fetch(
 	`https://cdn.builder.io/api/v3/html/${builderModel}?${new URLSearchParams({
 		apiKey: builderApiPublicKey,
 		cachebust: "true",
@@ -24,7 +24,7 @@ const { data: { title, description, content } } = await fetch(
 	<body>
 		<Header title={title} />
 		<main>
-			<Fragment set:html={content} />
+			<Fragment set:html={html} />
 		</main>
 		<Footer />
 	</body>
