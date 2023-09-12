@@ -18,6 +18,18 @@ const { data: { title, description, html } } = await fetch(
 	.catch();
 ---
 
+<style>
+  .blue {
+    background-color: #f0f5ff;
+  }
+  .content {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+  }
+</style>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -27,7 +39,14 @@ const { data: { title, description, html } } = await fetch(
 		<Header title={title} />
 		<div class="main">
 			<Fragment set:html={html} />
-      <section></section>
+      <section class="blue">
+        <a id="donate"></a>
+        <div class="content">
+          <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
+          <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
+          <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
+        </div>
+      </section>
       <section></section>
       <section></section>
       <section></section>
