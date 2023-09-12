@@ -6,6 +6,7 @@ import BlogBottomSection from '../components/BlogBottomSection.astro';
 
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
+const hi = '';
 
 const { data: { title, description, content, html } } = await fetch(
 	`https://cdn.builder.io/api/v3/html/${builderModel}?${new URLSearchParams({
