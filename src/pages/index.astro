@@ -24,9 +24,13 @@ const { data: { title, description, content, html } } = await fetch(
 	</head>
 	<body>
 		<Header title={title} />
-		<main>
+		<div class="main">
 			<Fragment set:html={html} />
-		</main>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+		</div>
     <BlogBottomSection />
 		<Footer />
 	</body>

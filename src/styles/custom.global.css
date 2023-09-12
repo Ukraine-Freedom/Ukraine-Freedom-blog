@@ -11,8 +11,8 @@ footer .logo {
   margin-top: 1em;
 }
 
-body > main {
-  min-height: calc(100vh - 20em);
+body > .main {
+  min-height: calc(100vh - 35em);
 }
 
 header button.primary {
