@@ -1,9 +1,18 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-	const posts = await getCollection('blog');
+  const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
+  const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
+  const { results: posts } = await fetch(
+    `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
+      apiKey: builderApiPublicKey,
+      cachebust: "true",
+    }).toString()}`
+  )
+    .then((res) => res.json())
+    .catch();
+
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
