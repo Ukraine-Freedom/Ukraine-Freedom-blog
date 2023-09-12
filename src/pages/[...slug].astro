@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
   const builderModel = import.meta.env.BUILDER_PAGE_MODEL;
 
-  const data = await fetch(
+  const { results: pages } = await fetch(
     `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
       apiKey: builderApiPublicKey,
       cachebust: "true",
@@ -15,11 +15,10 @@ export async function getStaticPaths() {
   )
     .then((res) => res.json())
     .catch();
-  console.log(data)
 
-  return data.results.map(post => ({
-    params: { slug: post.data.url },
-    props: post,
+  return pages.map(page => ({
+    params: { slug: page.data.url },
+    props: page,
   }))
 }
 const { data: { title, description, content }} = Astro.props;
