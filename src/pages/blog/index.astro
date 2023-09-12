@@ -91,6 +91,55 @@ const { results: posts } = await fetch(
 					font-size: 1.563em;
 				}
 			}
+      .blog-bottom-section {
+        background: #0e0f11;
+        height: 400px;
+        position: relative;
+        .background {
+          opacity: .3;
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          background: url("/640894e1b423a7769f04895e.jpeg") no-repeat 50% center;
+        }
+      }
+      .blog-bottom-section .inner {
+        display: flex;
+        height: 100%;
+        padding: 20px;
+        color: white;
+        position: inherit;
+        .left {
+          width: 60%;
+          .h3-contrib {
+            color: white;
+            font-size: 2.4em;
+            padding-top: 2.6em;
+          }
+          .p-contrib {
+            font-size: 1.5em;
+          }
+        }
+        .right {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          width: 40%;
+        }
+      }
+      .donate-button {
+        background: #2337ff;
+        padding: 16px 20px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 		</style>
 	</head>
 	<body>
@@ -98,22 +147,36 @@ const { results: posts } = await fetch(
 		<main>
 			<section>
 				<ul>
-					{
-						posts.map((post: any) => (
-							<li>
-								<a href={`/blog/${post.data.slug}/`}>
-									<img width={720} height={360} src={post.data.coverimage} alt={post.data.alttextimage} />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={new Date(post.data.publishDate ?? post.lastUpdated)} />
-									</p>
-								</a>
-							</li>
-						))
-					}
+					{posts.map((post: any) => (
+            <li>
+              <a href={`/blog/${post.data.slug}/`}>
+                <img src={post.data.coverimage} alt={post.data.alttextimage} />
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={new Date(post.data.publishDate ?? post.lastUpdated)} />
+                </p>
+              </a>
+            </li>
+						))}
 				</ul>
 			</section>
 		</main>
+    <div class="blog-bottom-section">
+      <div class="background"></div>
+      <div class="inner">
+        <div class="left">
+          <h3 class="h3-contrib">Your contribution matters!</h3>
+          <p class="p-contrib">Make your donation today to save more lives tomorrow!</p>
+        </div>
+        <div class="right">
+          <div>
+            <a href="/#donate">
+              <button class="donate-button">Donate now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 		<Footer />
 	</body>
 </html>
