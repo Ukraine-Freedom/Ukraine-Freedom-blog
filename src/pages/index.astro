@@ -6,7 +6,6 @@ import BlogBottomSection from '../components/BlogBottomSection.astro';
 
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_HOMEPAGE_MODEL;
-const hi = '';
 
 const { data: { title, description, html } } = await fetch(
 	`https://cdn.builder.io/api/v3/html/${builderModel}?${new URLSearchParams({
@@ -28,6 +27,42 @@ const { data: { title, description, html } } = await fetch(
     padding: 20px 0;
     text-align: center;
   }
+
+  .flexible {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+  }
+
+  .item{
+    padding: 2rem 3rem;
+    font-family: Inter;
+    font-size: 26px!important;
+    font-weight: 400;
+    max-width: 20%;
+    color:var(--color-ldnf8plo);
+    line-height: 1.3em;
+  }
+
+  .item p{
+      margin: unset;
+    } 
+
+  @media (max-width: 765px){
+    .flexible {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    .item{
+      width: calc(100% - 20px);
+      padding: 0 10px;
+      max-width: 100%;
+    }
+
+  }
+
 </style>
 
 <!doctype html>
@@ -47,7 +82,26 @@ const { data: { title, description, html } } = await fetch(
           <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
         </div>
       </section>
-      <section></section>
+      <section class="blue flexible">
+        <div class="item">
+          <p>
+            <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+            Help Ukrainian women and children survive
+          </p>
+        </div>
+        <div class="item">
+          <p>
+            <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+            Provide key equipment to military volunteers
+          </p>
+        </div>         
+        <div class="item">
+          <p>
+            <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+            Help end the carnage in Ukraine sooner
+          </p>
+        </div>
+      </section>
       <section></section>
       <section></section>
 		</div>
