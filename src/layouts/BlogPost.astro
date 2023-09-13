@@ -48,18 +48,15 @@ const { data: { title, description, publishDate, coverimage, alttextimage, conte
 			.last-updated-on {
 				font-style: italic;
 			}
-
       .blog-left-arrow {
         margin-right: .5em
       }
-
       .blog-left-arrow:before {
         content: "\f060";
         font-family: Font Awesome\ 5 Free;
         font-style: normal;
         font-weight: 700;
       }
-
       a.blog-back-button {
         color: #6b7280;
         cursor: pointer;
@@ -68,12 +65,10 @@ const { data: { title, description, publishDate, coverimage, alttextimage, conte
         margin-top: 1em;
         text-decoration: none;
       }
-
       .blog-tags {
         clear: both;
         padding: 1em 0
       }
-
       .blog-tags .tag {
         background-color: #e5e7eb;
         border-radius: 10px;
@@ -82,44 +77,40 @@ const { data: { title, description, publishDate, coverimage, alttextimage, conte
         margin-right: 5px;
         padding: 5px 10px
       }
-
       .blog-author-details {
         border-color: #e5e7eb;
         border-style: solid;
         border-left: 1px;
         border-right: 1px;
       }
-
       .blog-author-container {
         display: flex;
         justify-content: center;
         margin: 1em auto;
       }
-
+      .grid {
+        display: grid;
+      }
       .social-icon {
         height: 13px;
         width: 13px
       }
-
       .blog-author {
         align-items: center;
         display: flex;
         margin: auto
       }
-
       .blog-author .blog-author-image {
         border-radius: 100px;
         height: 36px;
         width: 36px
       }
-
       .blog-author .blog-author-name {
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;
         margin: 1em .5em 1em;
       }
-
       .blog-author-description {
         color: #6b7280;
         font-size: 12px;
@@ -129,35 +120,28 @@ const { data: { title, description, publishDate, coverimage, alttextimage, conte
         text-align: center;
         margin-bottom: 0;
       }
-
       .blog-author-social-icons {
         text-align: center
       }
-
       .blog-author-social-icons a {
-        color: #6b7280!important;
+        color: #6b7280;
         margin: .5em;
-        text-decoration: none!important
+        text-decoration: none;
       }
-
       .social-icon.facebook:before {
         content: "\f39e"
       }
-
       .social-icon.facebook:before,.social-icon.instagram:before {
         font-family: Font Awesome\ 5 Brands;
         font-style: normal;
         font-weight: 700
       }
-
       .social-icon.instagram:before {
         content: "\f16d"
       }
-
       .social-icon.twitter:before {
         content: "\f099"
       }
-
       .social-icon.linkedin:before,.social-icon.twitter:before {
         font-family: Font Awesome\ 5 Brands;
         font-style: normal;
@@ -187,7 +171,7 @@ const { data: { title, description, publishDate, coverimage, alttextimage, conte
           </div>
           <div class="blog-author-details">
             <div class="blog-author-container">
-              <div style="display:grid;">
+              <div class="grid">
                 <div class="blog-author">
                   <img class="blog-author-image" src="/6409ecdbf174f3583a63b7de.jpeg" alt="Steven Moore is a political strategist and public opinion researcher who has a track record of running towards danger to lend a helping hand.">
                   <p class="blog-author-name">Steven Moore</p>

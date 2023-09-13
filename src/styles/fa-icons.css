@@ -1,0 +1,19 @@
+i.icon {
+  font-family: Font Awesome\ 5 Free;
+  font-style: normal;
+  font-weight: 700;
+  display: inline-block;
+  color: var(--color-black);
+}
+i.icon-checkmark:before {
+  content: '\f058';
+}
+i.icon-female:before {
+  content: '\f182';
+}
+i.icon-cogs:before {
+  content: '\f085';
+}
+i.icon-landmark:before {
+  content: '\f66f';
+}

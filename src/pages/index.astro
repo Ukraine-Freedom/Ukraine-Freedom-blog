@@ -18,13 +18,16 @@ const { data: { title, description, html } } = await fetch(
 ---
 
 <style>
-  .blue {
-    background-color: #f0f5ff;
+  section.blue {
+    background-color: var(--color-light-blue);
   }
-  .dark-white{
-    background-color: var(--color-l9fxo0ia);
+  section.dark-white{
+    background-color: var(--color-light-gray);
   }
-  .content {
+  section.black {
+    background-color: var(--color-black);
+  }
+  section > div.content {
     max-width: 1170px;
     margin: 0 auto;
     padding: 20px 0;
@@ -32,7 +35,6 @@ const { data: { title, description, html } } = await fetch(
     position: relative;
     z-index: 1;
   }
-
   .flexible-row {
     display: flex;
     flex-direction: row;
@@ -40,7 +42,7 @@ const { data: { title, description, html } } = await fetch(
     justify-content: center;
     width: 100vw;
   }
-  .flexible-column{
+  .flexible-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,62 +51,33 @@ const { data: { title, description, html } } = await fetch(
     margin: 90px 0 40px 0;
     padding: 15px 0;
   }
-  .flexible-column h1 {
-    font-size: 48px!important;
+  section h1 {
+    font-size: 48px;
     padding: 0 30px;
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
   }
-
-  .item{
+  .flexible-column .item {
     padding: 2rem 3rem;
     font-family: Inter;
-    font-size: 26px!important;
+    font-size: 26px;
     font-weight: 400;
     max-width: 20%;
-    color:var(--color-ldnf8plo);
+    color: var(--color-gray);
     line-height: 1.3em;
   }
-
-  .item p{
-      margin: unset;
-    } 
-
-  .zero svg, .volunteer svg{
-    margin-bottom: 20px;
-  }
-
-  .zero{
+  .flexible-column.zero {
     margin:0;
     padding:0;
-    font-size: 24px!important;
   }
-  .gap{
+  .flexible-column.gap-1.5 {
     gap: 1.5em;
   }
-  .paragraph {
-    font-size: 30px!important;
-    color: var(--color-ldnf8plo);
-    font-weight: 400;
-    line-height:1.3em;
-  }
-  .donate-button {
-    background: #2337ff;
-    padding: 16px 20px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  .volunteer{
+  section.volunteer {
     min-height: 1000px;
-    background: #0e0f11;
     position: relative;
+    color: var(--color-white);
   }
-  .volunteer .background {
+  section.volunteer .background {
     opacity: 0.3;
     position: absolute;
     top: 0;
@@ -113,62 +86,36 @@ const { data: { title, description, html } } = await fetch(
     background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
     background-size: cover;
   }
-
-  .volunteer h1,  .volunteer p{
-    color: white;
-  }
-  .volunteer h1{
-    padding: 0 80px 60px 80px;
-  }
-  .volunteer p {
-    font-size: 24px;
-    font-weight: 400;
-  }
-  .margin{
-    margin: 20px 0;
+  section.volunteer h1 {
+    padding: 0 80px 60px;
   }
   .card {
     width: 86%;
     min-height: 1px;
     height: 100%;
-    background-color: #f0f5ff;
-    padding: 0% 2%;
+    background-color: var(--color-light-blue);
+    padding: 0 2%;
     border-radius: 20px;
-    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 6px 6px 0 rgba(var(--black),0.3);
     justify-content: flex-start;
-  }
-  .card .flexible-column{
-    margin: 40px 0 40px 0;
-  }
-  .card strong {
-    color: var(--color-la9zuwr2);
-    font-size: 30px!important;
-  }
-  .card-padding{
-    margin:1rem;
+    margin: 1rem;
     max-width: 30%;
-    
   }
-  .heading{
-    margin: 1rem 0;
-  }
-  .card .flexible-column {
+  .card > div {
+    margin: 40px 0 40px 0;
     height: 100%;
   }
-
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
       padding: 20px 0;
     }
-    .item{
+    .flexible-row > .item {
       width: calc(100% - 20px);
       padding: 10px;
       max-width: 100%;
     }
-
   }
-
 </style>
 
 <!doctype html>
@@ -181,179 +128,125 @@ const { data: { title, description, html } } = await fetch(
 		<div class="main">
 			<Fragment set:html={html} />
       <section class="blue">
-        <a id="donate"></a>
-        <div class="content">
-          <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
-          <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
-          <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
-        </div>
-      </section>
-      <section class="blue">
         <div class="flexible-row">
           <div class="item">
-            <p>
-              <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-              Help Ukrainian women and children survive
-            </p>
+            <i class="icon icon-checkmark" />
+            Help Ukrainian women and children survive
           </div>
           <div class="item">
-            <p>
-              <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-              Provide key equipment to military volunteers
-            </p>
-          </div>         
+            <i class="icon icon-checkmark" />
+            Provide key equipment to military volunteers
+          </div>
           <div class="item">
-            <p>
-              <svg fill="var(--color-ldnf8plo)" height="1em" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-              Help end the carnage in Ukraine sooner
-            </p>
+            <i class="icon icon-checkmark" />
+            Help end the carnage in Ukraine sooner
           </div>
         </div>
       </section>
-      <section class="content">
-        <div class="flexible-column gap">
-          <div>
-            <h1>
-              <strong>
-                Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
-              </strong>
-            </h1>
-          </div>
+      <section class="">
+        <div class="flexible-column gap-1.5">
+          <h1>
+            Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
+          </h1>
           <div class="flexible-row">
             <div class="item">
-              <div class=".flexible-column zero">
-                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 320 512"><path d="M160 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM88 384H70.2c-10.9 0-18.6-10.7-15.2-21.1L93.3 248.1 59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l53.6-89.2c20.3-33.7 56.7-54.3 96-54.3h11.6c39.3 0 75.7 20.6 96 54.3l53.6 89.2c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9l-33.9-56.3L265 362.9c3.5 10.4-4.3 21.1-15.2 21.1H232v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H152v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384z"/></svg>
-                <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
-              </div>
+              <i class="icon icon-female" />
+              <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
             </div>
             <div class="item">
-              <div class=".flexible-column zero">
-                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 640 512"><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8h-.7c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
-                <p>Ukraine's volunteer military <b>lacks basic equipment</b></p>
-              </div>
+              <i class="icon icon-cogs" />
+              <p>Ukraine's volunteer military <b>lacks basic equipment</b></p>
             </div >
             <div class="item">
-              <div class=".flexible-column zero">
-                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M240.1 4.2c9.8-5.6 21.9-5.6 31.8 0l171.8 98.1L448 104l0 .9 47.9 27.4c12.6 7.2 18.8 22 15.1 36s-16.4 23.8-30.9 23.8H32c-14.5 0-27.2-9.8-30.9-23.8s2.5-28.8 15.1-36L64 104.9V104l4.4-1.6L240.1 4.2zM64 224h64V416h40V224h64V416h48V224h64V416h40V224h64V420.3c.6 .3 1.2 .7 1.8 1.1l48 32c11.7 7.8 17 22.4 12.9 35.9S494.1 512 480 512H32c-14.1 0-26.5-9.2-30.6-22.7s1.1-28.1 12.9-35.9l48-32c.6-.4 1.2-.7 1.8-1.1V224z"/></svg>
-                <p>Big organizations only go <b>part of the way</b></p>
-              </div>
+              <i class="icon icon-landmark" />
+              <p>Big organizations only go <b>part of the way</b></p>
             </div>
-            
           </div>
         </div>
       </section>
-      <section class="dark-white">
-        <div class="content">
-          <div class="flexible-column ">
-            <div>
-              <h1>
-                <strong>
-                  Ukrainians shouldn't struggle with a lack of life-saving aid
-                </strong>
-              </h1>
-            </div>
-            <div class="paragraph">
-              <p>We believe that Ukraine is ground zero for freedom. Ukrainians are fighting for their lives and they need life-saving aid now</p>
-            </div>
-            <div>
-              <a href="/#donate">
-                <button class="donate-button">Donate now</button>
-              </a>
-            </div>
+      <section class="dark-white template-1">
+        <div class="flexible-column">
+          <h1>
+            Ukrainians shouldn't struggle with a lack of life-saving aid
+          </h1>
+          <p>
+            We believe that Ukraine is ground zero for freedom. Ukrainians are fighting for their lives and they need life-saving aid now
+          </p>
+          <div>
+            <a href="/#donate">
+              <button class="donate-button">Donate now</button>
+            </a>
           </div>
         </div>
-
       </section>
       <section class="volunteer">
         <div class="background"></div>
-          <div class="content">
-            <div class="flexible-column">
-              <div>
-                <h1>
-                  <strong>
-                    Since March 2022, we've sent more than $1 million in aid to areas near the front
-                  </strong>
-                </h1>
-              </div>
-              <div class="flexible-row">
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 576 512"><path d="M48 0C21.5 0 0 21.5 0 48V256H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v64H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v80c0 26.5 21.5 48 48 48H265.9c-6.3-10.2-9.9-22.2-9.9-35.1c0-46.9 25.8-87.8 64-109.2V271.8 48c0-26.5-21.5-48-48-48H48zM152 64h16c8.8 0 16 7.2 16 16v24h24c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16H184v24c0 8.8-7.2 16-16 16H152c-8.8 0-16-7.2-16-16V152H112c-8.8 0-16-7.2-16-16V120c0-8.8 7.2-16 16-16h24V80c0-8.8 7.2-16 16-16zM512 272a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM288 477.1c0 19.3 15.6 34.9 34.9 34.9H541.1c19.3 0 34.9-15.6 34.9-34.9c0-51.4-41.7-93.1-93.1-93.1H381.1c-51.4 0-93.1 41.7-93.1 93.1z"/></svg>
-                    <p>22 hospitals stocked with medical supplies</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
-                    <p>110+ Ukrainians evacuated from hot spots</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"/></svg>
-                    <p>More than 200 tons of food for cilivians at the front</p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="flexible-row">
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"/></svg>
-                    <p>17 generators to soldiers and civilians</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M80 96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32l96 0c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32h16c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64l16 0zm304 96c0-8.8-7.2-16-16-16s-16 7.2-16 16v32H320c-8.8 0-16 7.2-16 16s7.2 16 16 16h32v32c0 8.8 7.2 16 16 16s16-7.2 16-16V256h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H384V192zM80 240c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16z"/></svg>
-                    <p>1500 kw power bank and drone for war crimes investigators</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="flexible-column margin">
-                    <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
-                    <p>4 Starlinks to the Eastern front</p>
-                  </div>
-                </div>
-              </div>
-            </div>  
-          </div>
-
-      </section>
-      <section class="content">
-        <div class="flexible-column ">
-          <div>
+        <div class="content">
+          <div class="flexible-column">
             <h1>
-              <strong>
-                Here’s how you can help us support Ukrainians
-              </strong>
+              Since March 2022, we've sent more than $1 million in aid to areas near the front
             </h1>
+            <div class="flexible-row">
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 576 512"><path d="M48 0C21.5 0 0 21.5 0 48V256H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v64H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v80c0 26.5 21.5 48 48 48H265.9c-6.3-10.2-9.9-22.2-9.9-35.1c0-46.9 25.8-87.8 64-109.2V271.8 48c0-26.5-21.5-48-48-48H48zM152 64h16c8.8 0 16 7.2 16 16v24h24c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16H184v24c0 8.8-7.2 16-16 16H152c-8.8 0-16-7.2-16-16V152H112c-8.8 0-16-7.2-16-16V120c0-8.8 7.2-16 16-16h24V80c0-8.8 7.2-16 16-16zM512 272a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM288 477.1c0 19.3 15.6 34.9 34.9 34.9H541.1c19.3 0 34.9-15.6 34.9-34.9c0-51.4-41.7-93.1-93.1-93.1H381.1c-51.4 0-93.1 41.7-93.1 93.1z"/></svg>
+                <p>22 hospitals stocked with medical supplies</p>
+              </div>
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+                <p>110+ Ukrainians evacuated from hot spots</p>
+              </div>
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"/></svg>
+                <p>More than 200 tons of food for cilivians at the front</p>
+              </div>
+            </div>
+            <div class="flexible-row">
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"/></svg>
+                <p>17 generators to soldiers and civilians</p>
+              </div>
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M80 96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32l96 0c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32h16c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64l16 0zm304 96c0-8.8-7.2-16-16-16s-16 7.2-16 16v32H320c-8.8 0-16 7.2-16 16s7.2 16 16 16h32v32c0 8.8 7.2 16 16 16s16-7.2 16-16V256h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H384V192zM80 240c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16z"/></svg>
+                <p>1500 kw power bank and drone for war crimes investigators</p>
+              </div>
+              <div class="item">
+                <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+                <p>4 Starlinks to the Eastern front</p>
+              </div>
+            </div>
           </div>
-          <div class="flexible-row content">
-            <div class="item card-padding card">
-              <div class="flexible-column ">
+        </div>
+      </section>
+      <section class="">
+        <div class="flexible-column">
+          <h1>
+            Here’s how you can help us support Ukrainians
+          </h1>
+          <div class="flexible-row">
+            <div class="item card">
+              <div class="flexible-column">
                 <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 576 512"><path d="M312 24V34.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8V232c0 13.3-10.7 24-24 24s-24-10.7-24-24V220.6c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2V24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg>
-                <div class="heading">
-                  <p><strong>1. You click here to “Donate now”</strong></p>
-                </div>
+                <h4>
+                  1. You click here to “Donate now”
+                </h4>
                 <p>You can make a tax deductible donation of any amount once or set up regular payments.</p>
               </div>
             </div>
-            <div class="item card-padding card">
-              <div class="flexible-column ">
+            <div class="item card">
+              <div class="flexible-column">
                 <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM228 104c0-11-9-20-20-20s-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V312c0 11 9 20 20 20s20-9 20-20V298.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V104z"/></svg>
-                <div class="heading">
-                  <p><strong>2. We save more Ukrainian lives</strong></p>
-                </div>
+                <h4>
+                  2. We save more Ukrainian lives
+                </h4>
                 <p>Our team goes to the front and delivers essential equipment and life-saving aid.</p>
               </div>
             </div>
-            <div class="item card-padding card">
-              <div class="flexible-column ">
+            <div class="item card">
+              <div class="flexible-column">
                 <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 640 512"><path d="M80 48a48 48 0 1 1 96 0A48 48 0 1 1 80 48zm64 193.7v65.1l51 51c7.1 7.1 11.8 16.2 13.4 26.1l15.2 90.9c2.9 17.4-8.9 33.9-26.3 36.8s-33.9-8.9-36.8-26.3l-14.3-85.9L66.8 320C54.8 308 48 291.7 48 274.7V186.6c0-32.4 26.2-58.6 58.6-58.6c24.1 0 46.5 12 59.9 32l47.4 71.1 10.1 5V160c0-17.7 14.3-32 32-32H384c17.7 0 32 14.3 32 32v76.2l10.1-5L473.5 160c13.3-20 35.8-32 59.9-32c32.4 0 58.6 26.2 58.6 58.6v88.1c0 17-6.7 33.3-18.7 45.3l-79.4 79.4-14.3 85.9c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l15.2-90.9c1.6-9.9 6.3-19 13.4-26.1l51-51V241.7l-19 28.5c-4.6 7-11 12.6-18.5 16.3l-59.6 29.8c-2.4 1.3-4.9 2.2-7.6 2.8c-2.6 .6-5.3 .9-7.9 .8H256.7c-2.5 .1-5-.2-7.5-.7c-2.9-.6-5.6-1.6-8.1-3l-59.5-29.8c-7.5-3.7-13.8-9.4-18.5-16.3l-19-28.5zM2.3 468.1L50.1 348.6l49.2 49.2-37.6 94c-6.6 16.4-25.2 24.4-41.6 17.8S-4.3 484.5 2.3 468.1zM512 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm77.9 348.6l47.8 119.5c6.6 16.4-1.4 35-17.8 41.6s-35-1.4-41.6-17.8l-37.6-94 49.2-49.2z"/></svg>
-                <div class="heading">
-                  <p><strong>3. You get updates from the front</strong></p>
-                </div>
+                <h4>
+                  3. You get updates from the front
+                </h4>
                 <p>You'll get regular email updates from the Ukraine Freedom Project founder.</p>
               </div>
             </div>
@@ -363,6 +256,14 @@ const { data: { title, description, html } } = await fetch(
               <button class="donate-button">Donate now</button>
             </a>
           </div>
+        </div>
+      </section>
+      <section class="blue">
+        <a id="donate"></a>
+        <div class="content">
+          <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
+          <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
+          <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
         </div>
       </section>
 		</div>
