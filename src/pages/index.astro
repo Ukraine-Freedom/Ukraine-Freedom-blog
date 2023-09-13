@@ -21,6 +21,9 @@ const { data: { title, description, html } } = await fetch(
   .blue {
     background-color: #f0f5ff;
   }
+  .dark-white{
+    background-color: var(--color-l9fxo0ia);
+  }
   .content {
     max-width: 1170px;
     margin: 0 auto;
@@ -47,7 +50,8 @@ const { data: { title, description, html } } = await fetch(
   }
   .flexible-column h1 {
     font-size: 48px!important;
-    padding: 0 10px;
+    padding: 0 30px;
+    overflow-wrap:break-word;
   }
 
   .item{
@@ -75,6 +79,23 @@ const { data: { title, description, html } } = await fetch(
   }
   .gap{
     gap: 1.5em;
+  }
+  .paragraph {
+    font-size: 30px!important;
+    color: var(--color-ldnf8plo);
+    font-weight: 400;
+    line-height:1.3em;
+  }
+  .donate-button {
+    background: #2337ff;
+    padding: 16px 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   @media (max-width: 765px){
@@ -163,7 +184,28 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section></section>
+      <section class="dark-white">
+        <div class="content">
+          <div class="flexible-column ">
+            <div>
+              <h1>
+                <strong>
+                  Ukrainians shouldn't struggle with a lack of life-saving aid
+                </strong>
+              </h1>
+            </div>
+            <div class="paragraph">
+              <p>We believe that Ukraine is ground zero for freedom. Ukrainians are fighting for their lives and they need life-saving aid now</p>
+            </div>
+            <div>
+              <a href="/#donate">
+                <button class="donate-button">Donate now</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
 		</div>
     <BlogBottomSection />
 		<Footer />
