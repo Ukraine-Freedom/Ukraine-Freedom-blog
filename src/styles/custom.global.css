@@ -1,27 +1,57 @@
-header, footer {
-  .logo {
-    background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
-    background-size: 60px 60px;
-    width: 60px;
-    height: 60px;
-  }
+:root {
+  --color-gray: #3c404b;
+  --color-yellow: #f6d100;
+  --color-light-gray: #f9fafb;
+  --color-black: #0e0f11;
+  --color-light-blue: #f0f5ff;
+  --color-white: white;
 }
-
-footer .logo {
-  margin-top: 1em;
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 body > .main {
   min-height: calc(100vh - 35em);
 }
-
+header .logo, footer .logo {
+  background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
+  background-size: 60px 60px;
+  width: 60px;
+  height: 60px;
+}
+footer .logo {
+  margin-top: 1em;
+}
 header button.primary {
   padding: 10px 16px;
   background: none;
-  color: #2337ff;
+  color: var(--accent);
   border-radius: 4px;
-  border: 1px solid #2337ff;
+  border: 1px solid var(--accent);
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.donate-button {
+  background: var(--accent);
+  padding: 16px 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
