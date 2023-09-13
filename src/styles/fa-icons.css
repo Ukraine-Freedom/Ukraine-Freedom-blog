@@ -3,7 +3,6 @@ i.icon {
   font-style: normal;
   font-weight: 700;
   display: inline-block;
-  margin-right: 1px;
   color: var(--color-black);
 }
 i.icon-checkmark:before {
