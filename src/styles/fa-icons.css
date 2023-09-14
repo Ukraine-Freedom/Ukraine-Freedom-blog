@@ -10,10 +10,16 @@ i.icon-checkmark:before {
 }
 i.icon-female:before {
   content: '\f182';
+  
 }
 i.icon-cogs:before {
   content: '\f085';
 }
 i.icon-landmark:before {
   content: '\f66f';
+}
+
+i.yellow-icon {
+  color: var(--color-yellow);
+  font-size: 2em;
 }

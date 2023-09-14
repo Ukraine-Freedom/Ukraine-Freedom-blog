@@ -21,9 +21,6 @@ const { data: { title, description, html } } = await fetch(
   section.blue {
     background-color: var(--color-light-blue);
   }
-  section.dark-white{
-    background-color: var(--color-light-gray);
-  }
   section.black {
     background-color: var(--color-black);
   }
@@ -88,6 +85,29 @@ const { data: { title, description, html } } = await fetch(
     margin: 40px 0 40px 0;
     height: 100%;
   }
+  section.humanitarian, section.dark-white {
+    display: flex;
+    padding: 15vh 10vw 5vh 10vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-black);
+    font-family: Inter;
+    gap: 8vh;
+  }
+  section.humanitarian h1, section.dark-white h1 {
+    font-weight: 700;
+    line-height: 1.3em;
+  }
+  section.humanitarian p {
+    font-size: 24px;
+    color: var(--color-gray);
+    font-weight: 400;
+  }
+  section.dark-white{
+    background-color: var(--color-light-gray);
+  }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
@@ -124,21 +144,21 @@ const { data: { title, description, html } } = await fetch(
           Help end the carnage in Ukraine sooner
         </div>
       </section>
-      <section class="">
+      <section class="humanitarian">
         <h1>
           Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
         </h1>
         <div class="flexible-row">
           <div>
-            <i class="icon icon-female" />
+            <i class="icon icon-female yellow-icon" />
             <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
           </div>
           <div>
-            <i class="icon icon-cogs" />
+            <i class="icon icon-cogs yellow-icon" />
             <p>Ukraine's volunteer military <b>lacks basic equipment</b></p>
           </div >
           <div>
-            <i class="icon icon-landmark" />
+            <i class="icon icon-landmark yellow-icon" />
             <p>Big organizations only go <b>part of the way</b></p>
           </div>
         </div>
