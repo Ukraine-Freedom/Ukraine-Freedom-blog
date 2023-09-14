@@ -42,7 +42,6 @@ const { data: { title, description, html } } = await fetch(
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    width: 100vw;
   }
   .flexible-row > div {
     padding: 2rem 3rem;
@@ -52,23 +51,7 @@ const { data: { title, description, html } } = await fetch(
     color: var(--color-gray);
     line-height: 1.3em;
   }
-  section.volunteer {
-    min-height: 1000px;
-    position: relative;
-    color: var(--color-white);
-  }
-  section.volunteer .background {
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
-    background-size: cover;
-  }
-  section.volunteer h1 {
-    padding: 0 80px 60px;
-  }
+
   .card {
     width: 86%;
     min-height: 1px;
@@ -85,7 +68,7 @@ const { data: { title, description, html } } = await fetch(
     margin: 40px 0 40px 0;
     height: 100%;
   }
-  section.humanitarian, section.dark-white {
+  section.humanitarian, section.dark-white, section.volunteer {
     display: flex;
     padding: 15vh 10vw 5vh 10vw;
     flex-direction: column;
@@ -105,18 +88,56 @@ const { data: { title, description, html } } = await fetch(
     color: var(--color-gray);
     font-weight: 400;
   }
+  section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div{
+    max-width: 25%;
+  }
   section.dark-white{
     background-color: var(--color-light-gray);
+    gap: 1vh;
+  }
+  section.dark-white p {
+    font-size: 30px;
+    color: var(--color-gray);
+    font-weight: 400;
+    line-height: 1.3em;
+  }
+  section.dark-white > div{
+    margin: 3vh 0 8vh 0;
+  }
+  section.volunteer {
+    position: relative;
+    background-color: var(--color-black);
+    padding-top: 12vh;
+  }
+  section.volunteer .background {
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
+    background-size: cover;
+  }
+  section.volunteer h1 {
+    color: var(--color-white);
+    padding: 0 7vw;
+    margin-bottom: 15vh;
+  }
+  section.volunteer p {
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 400;
   }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
       padding: 20px 0;
+      align-items: center;
     }
-    .flexible-row > div {
+    .flexible-row > div, section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div {
       width: calc(100% - 20px);
       padding: 10px;
-      max-width: 100%;
+      max-width: 100vw;
     }
   }
 </style>
@@ -184,29 +205,29 @@ const { data: { title, description, html } } = await fetch(
           </h1>
           <div class="flexible-row">
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 576 512"><path d="M48 0C21.5 0 0 21.5 0 48V256H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v64H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v80c0 26.5 21.5 48 48 48H265.9c-6.3-10.2-9.9-22.2-9.9-35.1c0-46.9 25.8-87.8 64-109.2V271.8 48c0-26.5-21.5-48-48-48H48zM152 64h16c8.8 0 16 7.2 16 16v24h24c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16H184v24c0 8.8-7.2 16-16 16H152c-8.8 0-16-7.2-16-16V152H112c-8.8 0-16-7.2-16-16V120c0-8.8 7.2-16 16-16h24V80c0-8.8 7.2-16 16-16zM512 272a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM288 477.1c0 19.3 15.6 34.9 34.9 34.9H541.1c19.3 0 34.9-15.6 34.9-34.9c0-51.4-41.7-93.1-93.1-93.1H381.1c-51.4 0-93.1 41.7-93.1 93.1z"/></svg>
+              <i class="icon icon-hospital yellow-icon" />
               <p>22 hospitals stocked with medical supplies</p>
             </div>
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+              <i class="icon icon-fire yellow-icon" />
               <p>110+ Ukrainians evacuated from hot spots</p>
             </div>
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"/></svg>
+              <i class="icon icon-utensils yellow-icon" />
               <p>More than 200 tons of food for cilivians at the front</p>
             </div>
           </div>
           <div class="flexible-row">
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"/></svg>
+              <i class="icon icon-plug yellow-icon" />
               <p>17 generators to soldiers and civilians</p>
             </div>
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M80 96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32l96 0c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32h16c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64l16 0zm304 96c0-8.8-7.2-16-16-16s-16 7.2-16 16v32H320c-8.8 0-16 7.2-16 16s7.2 16 16 16h32v32c0 8.8 7.2 16 16 16s16-7.2 16-16V256h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H384V192zM80 240c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16z"/></svg>
+              <i class="icon icon-battery yellow-icon" />
               <p>1500 kw power bank and drone for war crimes investigators</p>
             </div>
             <div>
-              <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+              <i class="icon icon-satellite yellow-icon" />
               <p>4 Starlinks to the Eastern front</p>
             </div>
           </div>

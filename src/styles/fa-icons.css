@@ -10,7 +10,6 @@ i.icon-checkmark:before {
 }
 i.icon-female:before {
   content: '\f182';
-  
 }
 i.icon-cogs:before {
   content: '\f085';
@@ -18,6 +17,25 @@ i.icon-cogs:before {
 i.icon-landmark:before {
   content: '\f66f';
 }
+i.icon-hospital:before {
+  content: '\f80d';
+}
+i.icon-fire:before {
+  content: '\f7e4';
+}
+i.icon-utensils:before {
+  content: '\f2e7';
+}
+i.icon-plug:before {
+  content: '\f1e6';
+}
+i.icon-battery:before {
+  content: '\f5df';
+}
+i.icon-satellite:before {
+  content: '\f7c0';
+}
+
 
 i.yellow-icon {
   color: var(--color-yellow);
