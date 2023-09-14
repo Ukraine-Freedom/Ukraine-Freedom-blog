@@ -43,6 +43,9 @@ const { data: { title, description, html } } = await fetch(
     align-items: flex-start;
     justify-content: center;
   }
+  .mw-1170{
+    max-width: 1170px;
+  }
   .flexible-row > div {
     padding: 2rem 3rem;
     font-size: 26px;
@@ -53,22 +56,22 @@ const { data: { title, description, html } } = await fetch(
   }
 
   .card {
-    width: 86%;
-    min-height: 1px;
-    height: 100%;
+    width: 100%;
+    height: auto;
     background-color: var(--color-light-blue);
     padding: 0 2%;
+    gap: 1em;
     border-radius: 20px;
     box-shadow: 0 6px 6px 0 rgba(var(--black),0.3);
-    justify-content: flex-start;
     margin: 1rem;
-    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .card > div {
-    margin: 40px 0 40px 0;
-    height: 100%;
+    height: auto;
   }
-  section.humanitarian, section.dark-white, section.volunteer {
+  section.humanitarian, section.dark-white, section.volunteer, section.cards {
     display: flex;
     padding: 15vh 10vw 5vh 10vw;
     flex-direction: column;
@@ -88,7 +91,7 @@ const { data: { title, description, html } } = await fetch(
     color: var(--color-gray);
     font-weight: 400;
   }
-  section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div{
+  section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div, section.cards .flexible-row > div{
     max-width: 25%;
   }
   section.dark-white{
@@ -128,13 +131,32 @@ const { data: { title, description, html } } = await fetch(
     font-size: 24px;
     font-weight: 400;
   }
+
+  section.cards .flexible-row {
+    width: 100vw;
+  }
+  section.cards .card{
+    padding: 3em 1em 1.5em 1em;
+    flex: 1;
+  }
+  section.cards p{
+    font-size: 24px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  section.cards h4 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin:0;
+  }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
       padding: 20px 0;
       align-items: center;
     }
-    .flexible-row > div, section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div {
+    .flexible-row > div, section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div, section.cards .flexible-row > div {
       width: calc(100% - 20px);
       padding: 10px;
       max-width: 100vw;
@@ -169,7 +191,7 @@ const { data: { title, description, html } } = await fetch(
         <h1>
           Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
         </h1>
-        <div class="flexible-row">
+        <div class="flexible-row mw-1170">
           <div>
             <i class="icon icon-female yellow-icon" />
             <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
@@ -203,7 +225,7 @@ const { data: { title, description, html } } = await fetch(
           <h1>
             Since March 2022, we've sent more than $1 million in aid to areas near the front
           </h1>
-          <div class="flexible-row">
+          <div class="flexible-row mw-1170">
             <div>
               <i class="icon icon-hospital yellow-icon" />
               <p>22 hospitals stocked with medical supplies</p>
@@ -217,7 +239,7 @@ const { data: { title, description, html } } = await fetch(
               <p>More than 200 tons of food for cilivians at the front</p>
             </div>
           </div>
-          <div class="flexible-row">
+          <div class="flexible-row mw-1170">
             <div>
               <i class="icon icon-plug yellow-icon" />
               <p>17 generators to soldiers and civilians</p>
@@ -233,31 +255,37 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="">
+      <section class="cards">
         <h1>
           Here’s how you can help us support Ukrainians
         </h1>
-        <div class="flexible-row">
+        <div class="flexible-row mw-1170">
           <div class="card">
-            <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 576 512"><path d="M312 24V34.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8V232c0 13.3-10.7 24-24 24s-24-10.7-24-24V220.6c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2V24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg>
+            <i class="icon icon-hand yellow-icon" />
             <h4>
               1. You click here to “Donate now”
             </h4>
-            <p>You can make a tax deductible donation of any amount once or set up regular payments.</p>
+            <div>
+              <p>You can make a <b>tax deductible donation</b> of any amount once or set up regular payments.</p>
+            </div>
           </div>
           <div class="card">
-            <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM228 104c0-11-9-20-20-20s-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V312c0 11 9 20 20 20s20-9 20-20V298.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V104z"/></svg>
+            <i class="icon icon-search yellow-icon" />
             <h4>
               2. We save more Ukrainian lives
             </h4>
-            <p>Our team goes to the front and delivers essential equipment and life-saving aid.</p>
+            <div>
+              <p>Our team <b>goes to the front</b> and delivers essential equipment and life-saving aid.</p>
+            </div>
           </div>
           <div class="card">
-            <svg fill="var(--color-ldngbz0o)" height="2em" viewBox="0 0 640 512"><path d="M80 48a48 48 0 1 1 96 0A48 48 0 1 1 80 48zm64 193.7v65.1l51 51c7.1 7.1 11.8 16.2 13.4 26.1l15.2 90.9c2.9 17.4-8.9 33.9-26.3 36.8s-33.9-8.9-36.8-26.3l-14.3-85.9L66.8 320C54.8 308 48 291.7 48 274.7V186.6c0-32.4 26.2-58.6 58.6-58.6c24.1 0 46.5 12 59.9 32l47.4 71.1 10.1 5V160c0-17.7 14.3-32 32-32H384c17.7 0 32 14.3 32 32v76.2l10.1-5L473.5 160c13.3-20 35.8-32 59.9-32c32.4 0 58.6 26.2 58.6 58.6v88.1c0 17-6.7 33.3-18.7 45.3l-79.4 79.4-14.3 85.9c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l15.2-90.9c1.6-9.9 6.3-19 13.4-26.1l51-51V241.7l-19 28.5c-4.6 7-11 12.6-18.5 16.3l-59.6 29.8c-2.4 1.3-4.9 2.2-7.6 2.8c-2.6 .6-5.3 .9-7.9 .8H256.7c-2.5 .1-5-.2-7.5-.7c-2.9-.6-5.6-1.6-8.1-3l-59.5-29.8c-7.5-3.7-13.8-9.4-18.5-16.3l-19-28.5zM2.3 468.1L50.1 348.6l49.2 49.2-37.6 94c-6.6 16.4-25.2 24.4-41.6 17.8S-4.3 484.5 2.3 468.1zM512 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm77.9 348.6l47.8 119.5c6.6 16.4-1.4 35-17.8 41.6s-35-1.4-41.6-17.8l-37.6-94 49.2-49.2z"/></svg>
+            <i class="icon icon-carry yellow-icon" />
             <h4>
               3. You get updates from the front
             </h4>
-            <p>You'll get regular email updates from the Ukraine Freedom Project founder.</p>
+            <div>
+              <p>You'll get <b>regular email updates</b> from the Ukraine Freedom Project founder.</p>
+            </div>
           </div>
         </div>
         <div>

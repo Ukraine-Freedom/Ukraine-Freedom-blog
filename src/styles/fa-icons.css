@@ -35,6 +35,15 @@ i.icon-battery:before {
 i.icon-satellite:before {
   content: '\f7c0';
 }
+i.icon-hand:before {
+  content: '\f4c0';
+}
+i.icon-search:before {
+  content: '\f688';
+}
+i.icon-carry:before {
+  content: '\f4ce';
+}
 
 
 i.yellow-icon {
