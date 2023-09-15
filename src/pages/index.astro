@@ -50,14 +50,16 @@ const { data: { title, description, html } } = await fetch(
     padding: 2rem 3rem;
     font-size: 26px;
     font-weight: 400;
-    max-width: 20%;
     color: var(--color-gray);
     line-height: 1.3em;
+  }
+  section.blue.flexible-row > div {
+    max-width: 20%;
   }
 
   .card {
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: var(--color-light-blue);
     padding: 0 2%;
     gap: 1em;
@@ -131,7 +133,9 @@ const { data: { title, description, html } } = await fetch(
     font-size: 24px;
     font-weight: 400;
   }
-
+  section.cards{
+    margin-bottom: 8vh;
+  }
   section.cards .flexible-row {
     width: 100vw;
   }
@@ -149,6 +153,16 @@ const { data: { title, description, html } } = await fetch(
     font-weight: 700;
     line-height: 1.3em;
     margin:0;
+  }
+  section.donation{
+    gap: 1em;
+  }
+  section.donation .flexible-row > div p {
+    font-size: 24px;
+  }
+  section.donation .flexible-row > div {
+    padding: 0.5em 1em;
+    max-width: 12vw;
   }
   @media (max-width: 765px){
     .flexible-row {
@@ -293,6 +307,36 @@ const { data: { title, description, html } } = await fetch(
             <button class="donate-button">Donate now</button>
           </a>
         </div>
+      </section>
+      <section class="dark-white donation">
+      <h1>
+        Here's how your donations save lives
+      </h1>
+      <p>
+        The Ukraine Freedom Project has a network of trusted Ukrainians to whom we send aid. We go to the front to make sure your donations are being spent well
+      </p>
+      <div class="flexible-row mw-1170">
+        <div>
+          <i class="icon icon-coins yellow-icon" />
+          <p>1. You make a donation</p>
+        </div>
+        <div>
+          <i class="icon icon-donate yellow-icon" />
+          <p>2. Ukraine Freedom Project collects funds</p>
+        </div>
+        <div>
+          <i class="icon icon-school yellow-icon" />
+          <p>3. We buy and deliver life-saving aid</p>
+        </div>
+        <div>
+          <i class="icon icon-parachute yellow-icon" />
+          <p>4. We verify your aid goes to people in need</p>
+        </div>
+        <div>
+          <i class="icon icon-smile yellow-icon" />
+          <p>5. Ukrainians are fully equipped to survive and win this war</p>
+        </div>
+      </div>
       </section>
       <section class="blue">
         <a id="donate"></a>

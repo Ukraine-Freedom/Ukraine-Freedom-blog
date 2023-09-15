@@ -45,6 +45,22 @@ i.icon-carry:before {
   content: '\f4ce';
 }
 
+i.icon-coins:before {
+  content: '\f51e';
+}
+i.icon-donate:before {
+  content: '\f4b9';
+}
+i.icon-school:before {
+  content: '\f549';
+}
+i.icon-parachute:before {
+  content: '\f4cd';
+}
+i.icon-smile:before {
+  content: '\f118';
+}
+
 
 i.yellow-icon {
   color: var(--color-yellow);
