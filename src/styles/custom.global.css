@@ -5,6 +5,8 @@
   --color-black: #0e0f11;
   --color-light-blue: #f0f5ff;
   --color-white: white;
+  --color-true-gray: rgba(0,0,0,0.3);
+  
 }
 @font-face {
   font-family: 'Inter';
@@ -59,4 +61,26 @@ header button.primary {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.gap-small {
+  gap: 1em;
+}
+.gap-medium {
+  gap: 2em;
+}
+
+.video-js {
+  display: block;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  word-break: initial;
 }

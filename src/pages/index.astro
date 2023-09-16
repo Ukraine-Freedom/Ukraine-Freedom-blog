@@ -15,6 +15,11 @@ const { data: { title, description, html } } = await fetch(
 )
 	.then((res) => res.json())
 	.catch();
+
+
+ 
+
+
 ---
 
 <style>
@@ -40,7 +45,6 @@ const { data: { title, description, html } } = await fetch(
   .flexible-row {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
   }
   .mw-1170{
@@ -59,10 +63,8 @@ const { data: { title, description, html } } = await fetch(
 
   .card {
     width: 100%;
-    height: 100%;
-    background-color: var(--color-light-blue);
+    min-height: 100%;
     padding: 0 2%;
-    gap: 1em;
     border-radius: 20px;
     box-shadow: 0 6px 6px 0 rgba(var(--black),0.3);
     margin: 1rem;
@@ -70,8 +72,19 @@ const { data: { title, description, html } } = await fetch(
     flex-direction: column;
     justify-content: flex-start;
   }
+  .card.blue{
+    background-color: var(--color-light-blue);
+  }
   .card > div {
     height: auto;
+  }
+  .card h6 {
+    font-size:30px;
+    font-weight: 400;
+    color: var(--color-gray);
+  }
+  .card.light-blue{
+    background-color: var(--color-light-blue);
   }
   section.dark-white, section.template-1 {
     display: flex;
@@ -120,13 +133,18 @@ const { data: { title, description, html } } = await fetch(
     top: 0;
     height: 100%;
     width: 100%;
-    background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
     background-size: cover;
+  }
+  .background-1{
+    background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
+  }
+  .background-2{
+    background: url("/6408954376419e90066021a7.jpeg") no-repeat 50% center;
   }
   section.volunteer h1 {
     color: var(--color-white);
     padding: 0 7vw;
-    margin-bottom: 15vh;
+    margin-bottom: 2em;
   }
   section.volunteer p {
     color: var(--color-white);
@@ -189,7 +207,7 @@ const { data: { title, description, html } } = await fetch(
       padding: 20px 0;
       align-items: center;
     }
-    .flexible-row > div, section.template-1 .flexible-row > div {
+    .flexible-row > div, section.template-1 .flexible-row > div, section.donation .flexible-row > div {
       width: calc(100% - 20px);
       padding: 10px;
       max-width: 100vw;
@@ -226,15 +244,15 @@ const { data: { title, description, html } } = await fetch(
         </h1>
         <div class="flexible-row mw-1170">
           <div>
-            <i class="icon icon-female yellow-icon" />
+            <i class="icon icon-female yellow medium" />
             <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
           </div>
           <div>
-            <i class="icon icon-cogs yellow-icon" />
+            <i class="icon icon-cogs yellow medium" />
             <p>Ukraine's volunteer military <b>lacks basic equipment</b></p>
           </div >
           <div>
-            <i class="icon icon-landmark yellow-icon" />
+            <i class="icon icon-landmark yellow medium" />
             <p>Big organizations only go <b>part of the way</b></p>
           </div>
         </div>
@@ -253,36 +271,36 @@ const { data: { title, description, html } } = await fetch(
         </div>
       </section>
       <section class="volunteer template-1">
-        <div class="background"></div>
+        <div class="background background-1"></div>
         <div class="content">
           <h1>
             Since March 2022, we've sent more than $1 million in aid to areas near the front
           </h1>
           <div class="flexible-row mw-1170">
             <div>
-              <i class="icon icon-hospital yellow-icon" />
+              <i class="icon icon-hospital yellow medium" />
               <p>22 hospitals stocked with medical supplies</p>
             </div>
             <div>
-              <i class="icon icon-fire yellow-icon" />
+              <i class="icon icon-fire yellow medium" />
               <p>110+ Ukrainians evacuated from hot spots</p>
             </div>
             <div>
-              <i class="icon icon-utensils yellow-icon" />
+              <i class="icon icon-utensils yellow medium" />
               <p>More than 200 tons of food for cilivians at the front</p>
             </div>
           </div>
           <div class="flexible-row mw-1170">
             <div>
-              <i class="icon icon-plug yellow-icon" />
+              <i class="icon icon-plug yellow medium" />
               <p>17 generators to soldiers and civilians</p>
             </div>
             <div>
-              <i class="icon icon-battery yellow-icon" />
+              <i class="icon icon-battery yellow medium" />
               <p>1500 kw power bank and drone for war crimes investigators</p>
             </div>
             <div>
-              <i class="icon icon-satellite yellow-icon" />
+              <i class="icon icon-satellite yellow medium" />
               <p>4 Starlinks to the Eastern front</p>
             </div>
           </div>
@@ -293,8 +311,8 @@ const { data: { title, description, html } } = await fetch(
           Here’s how you can help us support Ukrainians
         </h1>
         <div class="flexible-row mw-1170">
-          <div class="card">
-            <i class="icon icon-hand yellow-icon" />
+          <div class="card gap-small blue">
+            <i class="icon icon-hand yellow medium" />
             <h4>
               1. You click here to “Donate now”
             </h4>
@@ -302,8 +320,8 @@ const { data: { title, description, html } } = await fetch(
               <p>You can make a <b>tax deductible donation</b> of any amount once or set up regular payments.</p>
             </div>
           </div>
-          <div class="card">
-            <i class="icon icon-search yellow-icon" />
+          <div class="card gap-small blue">
+            <i class="icon icon-search yellow medium" />
             <h4>
               2. We save more Ukrainian lives
             </h4>
@@ -311,8 +329,8 @@ const { data: { title, description, html } } = await fetch(
               <p>Our team <b>goes to the front</b> and delivers essential equipment and life-saving aid.</p>
             </div>
           </div>
-          <div class="card">
-            <i class="icon icon-carry yellow-icon" />
+          <div class="card gap-small blue">
+            <i class="icon icon-carry yellow medium" />
             <h4>
               3. You get updates from the front
             </h4>
@@ -336,23 +354,23 @@ const { data: { title, description, html } } = await fetch(
       </p>
       <div class="flexible-row mw-1170">
         <div>
-          <i class="icon icon-coins yellow-icon" />
+          <i class="icon icon-coins yellow medium" />
           <p>1. You make a donation</p>
         </div>
         <div>
-          <i class="icon icon-donate yellow-icon" />
+          <i class="icon icon-donate yellow medium" />
           <p>2. Ukraine Freedom Project collects funds</p>
         </div>
         <div>
-          <i class="icon icon-school yellow-icon" />
+          <i class="icon icon-school yellow medium" />
           <p>3. We buy and deliver life-saving aid</p>
         </div>
         <div>
-          <i class="icon icon-parachute yellow-icon" />
+          <i class="icon icon-parachute yellow medium" />
           <p>4. We verify your aid goes to people in need</p>
         </div>
         <div>
-          <i class="icon icon-smile yellow-icon" />
+          <i class="icon icon-smile yellow medium" />
           <p>5. Ukrainians are fully equipped to survive and win this war</p>
         </div>
       </div>
@@ -382,6 +400,41 @@ const { data: { title, description, html } } = await fetch(
           <a href="/#donate">
             <button class="donate-button">Donate now</button>
           </a>
+        </div>
+      </section>
+      <section class="volunteer template-1">
+        <div class="background background-2"></div>
+        <div class="content">
+          <h1>See who we’ve already helped in Ukraine</h1>
+          <div class="flexible-row">
+            <div class="light-blue card gap-medium">
+              <i class="icon icon-quote grey small" />
+              <h6><b>Artem,</b> Mariupol police officer turned soldier<br><br></h6>
+              <i class="icon brand icon-video true-grey big position" id="playButton"/>
+              <video class="video-js" id="videoPlayer" controls style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="light-blue card gap-medium">
+              <i class="icon icon-quote grey small" />
+              <h6><b>Iryna, Taras and Ivan,</b> refugees from the siege of Kyiv</h6>
+              <i class="icon brand icon-video true-grey big position" />
+              <video id="videoPlayer" controls style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="light-blue card gap-medium">
+              <i class="icon icon-quote grey small" />
+              <h6><b>Olena and Alex,</b> Poltava Down Syndrome community</h6>
+              <i class="icon brand icon-video true-grey big position" />
+              <video id="videoPlayer" controls style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </section>
       <section class="blue">
