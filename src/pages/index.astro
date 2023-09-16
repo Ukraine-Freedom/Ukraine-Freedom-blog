@@ -204,10 +204,20 @@ const { data: { title, description, html } } = await fetch(
       padding: 20px 0;
       align-items: center;
     }
-    .flexible-row > div, section.template-1 .flexible-row > div, section.donation .flexible-row > div {
-      width: calc(100% - 20px);
-      padding: 10px;
+    .flexible-row > div, section.template-1 .flexible-row > div, section.donation .flexible-row > div, section.blue.flexible-row > div {
+      width: 95vw;
+      padding: 1em 0;
       max-width: 100vw;
+    }
+    section.template-1{
+      padding:20px 0;
+    }
+    
+    .width-33{
+      width: 100vw;
+    }
+    .four-elements-grid{
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -444,7 +454,7 @@ const { data: { title, description, html } } = await fetch(
             Donors who commit to a recurring donation of any amount become part of our Trident Circle.</p>
           <p class="left-bigtext">Trident Circle members will have the opportunity to participate in periodic Zoom calls with Steven and Ukrainians who the Ukraine Freedom Project is helping.<br>
             Real live updates from ground zero for freedom in the world. You can ask questions about what is really going on in Ukraine.<br>
-            You can make a monthly donation of $10, $50, $100, $250 or any other amount you want.</p>
+            You can make a monthly donation of <b>$10, $50, $100, $250</b> or any other amount you want.</p>
             <img class="shadow" src="/640a7c6dcb1935bca59331ea.jpeg">
         </div>
         <div class="margin-bottom-medium">
@@ -459,6 +469,45 @@ const { data: { title, description, html } } = await fetch(
           <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
           <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
           <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
+        </div>
+      </section>
+      <section class="dark-white template-1 gap-medium">
+        <h1>Media about Ukraine Freedom Project</h1>
+        <div>
+          <div class="flexible-row"> 
+            <div class="width-33">
+              <a href="https://www.washingtonexaminer.com/news/washington-secrets/ex-hill-chief-leads-humanitarian-effort-in-ukraine" target="_blank">
+                <img class="height-100 " src="64c7c4e614592c32a0a3cb08.png">
+              </a>
+            </div>
+            <div class="width-33">
+              <a href="https://www.instagram.com/p/CuZ3jYJuPA-/" target="_blank">
+                <img class="height-100" src="64c7c53314592c1f3ea3cba7.webp">
+              </a>
+            </div>
+            <div class="width-33">
+              <a href="https://www.businessinsider.com/american-helping-in-ukraine-steven-moore-rescue-mission-russia-putin-war-2022-4?r=US&IR=T" target="_blank">
+                <img class="height-100" src="64c7c1cc14592c6736a3c7f7.png">
+              </a>
+            </div>
+          </div>
+          <div class="flexible-row align-center">
+            <div class="width-33">
+              <a href="https://www.siriusxm.com/clips/clip/65cfb29a-195e-4b44-91fb-9e855ad51e03/b5ceb0a6-fd26-4050-b462-3c63d7c47c07" target="_blank">
+                <img class="height-100" src="64c7c27c14592c6d56a3c82b.png">
+              </a>
+            </div>
+            <div class="width-33">
+              <a href="https://rollcall.com/2023/03/30/when-russia-invaded-this-former-house-staffer-rushed-to-ukraine/" target="_blank">
+                <img  src="64c7c2d13b545007a75374e4.png">
+              </a>
+            </div>
+            <div class="width-33">
+              <a href="https://www.youtube.com/watch?v=G-eG98pOi0k" target="_blank">
+                <img class="height-100" src="64c7c30d14592c7bb1a3c865.png">
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 		</div>
