@@ -106,10 +106,10 @@ header button.primary {
   color: var(--color-gray);
   line-height: 1.3em;
 }
-.height-100{
+.height-hundred{
   height: 100px;
 }
-.width-25{
+.quarter-width{
   width: 25vw;
 }
 .margin-bottom-small {
@@ -133,4 +133,17 @@ img.circle-image{
   max-width: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
+}
+section.photo-back {
+  position: relative;
+  background-color: var(--color-black);
+  padding-top: 12vh;
+}
+section.photo-back .background {
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 }
