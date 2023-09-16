@@ -73,9 +73,9 @@ const { data: { title, description, html } } = await fetch(
   .card > div {
     height: auto;
   }
-  section.dark-white, section.template-1 {
+  section.humanitarian, section.dark-white, section.volunteer, section.cards {
     display: flex;
-    padding: 6em 7em 2em 7em;
+    padding: 15vh 10vw 5vh 10vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@ const { data: { title, description, html } } = await fetch(
     color: var(--color-gray);
     font-weight: 400;
   }
-  section.template-1 .flexible-row > div{
+  section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div, section.cards .flexible-row > div{
     max-width: 25%;
   }
   section.dark-white{
@@ -164,32 +164,13 @@ const { data: { title, description, html } } = await fetch(
     padding: 0.5em 1em;
     max-width: 12vw;
   }
-  section.military {
-    margin-bottom: 2em;
-  }
-  section.military h4 {
-    font-size: 30px;
-    font-weight: 700;
-  }
-  section.military p {
-    font-size: 24px;
-    padding: 0 0.7em;
-  }
-  section.military .flexible-row > div {
-    max-width: 27vw;
-    padding: 2rem 2.5rem;
-  }
-  .military-image {
-    margin-bottom: 1em;
-    box-shadow: 0 4px 3px #00000026, 0 0 2px #00000026;
-  }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
       padding: 20px 0;
       align-items: center;
     }
-    .flexible-row > div, section.template-1 .flexible-row > div {
+    .flexible-row > div, section.humanitarian .flexible-row > div, section.volunteer .flexible-row > div, section.cards .flexible-row > div {
       width: calc(100% - 20px);
       padding: 10px;
       max-width: 100vw;
@@ -220,7 +201,7 @@ const { data: { title, description, html } } = await fetch(
           Help end the carnage in Ukraine sooner
         </div>
       </section>
-      <section class="humanitarian template-1">
+      <section class="humanitarian">
         <h1>
           Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
         </h1>
@@ -252,7 +233,7 @@ const { data: { title, description, html } } = await fetch(
           </a>
         </div>
       </section>
-      <section class="volunteer template-1">
+      <section class="volunteer">
         <div class="background"></div>
         <div class="content">
           <h1>
@@ -288,7 +269,7 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="cards template-1">
+      <section class="cards">
         <h1>
           Here’s how you can help us support Ukrainians
         </h1>
@@ -356,33 +337,6 @@ const { data: { title, description, html } } = await fetch(
           <p>5. Ukrainians are fully equipped to survive and win this war</p>
         </div>
       </div>
-      </section>
-      <section class="military template-1">
-        <h1>
-          Your donations will ease Ukrainian civilian suffering and help military volunteers
-        </h1>
-        <div class="flexible-row mw-1170">
-          <div>
-            <img class="military-image" src="/640a707f0fb9a98589db0a68.jpeg">
-            <h4>Help women and children</h4>
-            <p>Your $81 donation feeds 3 Ukrainian families for a week. Donate now to help hungry children.</p>
-          </div>
-          <div>
-            <img class="military-image" src="/640a707fcb193511a1932ab6.jpeg">
-            <h4>Help military volunteers</h4>
-            <p>With every $250 raised we can buy 1 generator for military volunteers at the front.</p>
-          </div>
-          <div>
-            <img class="military-image" src="/640a707ff174f338a8641e44.jpeg">
-            <h4>Help Ukraine win this war</h4>
-            <p>We take your donations into harm's way to end this war sooner.</p>
-          </div>
-        </div>
-        <div>
-          <a href="/#donate">
-            <button class="donate-button">Donate now</button>
-          </a>
-        </div>
       </section>
       <section class="blue">
         <a id="donate"></a>
