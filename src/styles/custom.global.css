@@ -121,10 +121,16 @@ header button.primary {
 .shadow{
   box-shadow: 0 4px 3px #00000026, 0 0 2px #00000026;
 }
-
 .row-flex{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+img.circle-image{
+  width:250px;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }

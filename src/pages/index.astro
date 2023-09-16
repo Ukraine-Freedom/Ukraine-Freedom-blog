@@ -209,6 +209,13 @@ const { data: { title, description, html } } = await fetch(
   section.follow > div img {
     height: 70px;
   }
+  section.template-1 .flexible-row.flex-four > div{
+    padding: 0 15px;
+    max-width: 18vw;
+  }
+  .flexible-row.flex-four > p {
+    font-size: 24px;
+  }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
@@ -233,6 +240,10 @@ const { data: { title, description, html } } = await fetch(
     section.follow.row-flex {
       flex-direction: column;
       padding: 3em 0.01em;
+    }
+    section.template-1 .flexible-row.flex-four > div{
+      max-width: 100vw;
+      width: 95vw;
     }
   }
 </style>
@@ -484,6 +495,44 @@ const { data: { title, description, html } } = await fetch(
           <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
           <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
           <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
+        </div>
+      </section>
+      <section class="template-1">
+        <h1>Board of advisors</h1>
+        <div class="flexible-row flex-four">
+          <div>
+            <img class="circle-image" src="/640a75a9f174f353436420c3.jpeg">
+            <p><b>Peter Roskam</b></p>
+            <p>
+              Former US Representative<br>
+              <a href="https://www.linkedin.com/in/peter-roskam/" target="_blank">Link to bio</a>
+            </p>
+          </div>
+          <div>
+            <img class="circle-image shadow" src="/640af4eef174f36686646dc5.jpeg">
+            <p><b>Julie Meier Wright</b></p>
+            <p>
+              Former California Secretary of Trade and Commerce<br>
+              <a href="https://www.linkedin.com/in/julie-meier-wright-0116313/" target="_blank">Link to bio</a>
+            </p>
+          </div>
+          <div>
+            <img class="circle-image shadow" src="/640a75a9f174f37bcb6420c2.jpeg">
+            <p><b>Jeffrey Krilla</b></p>
+            <p>
+              Former Deputy Assistant Secretary of State<br>
+              <a href="https://www.linkedin.com/in/jeffreykrilla/" target="_blank">Link to bio</a>
+            </p>
+          </div>
+          <div>
+            <img class="circle-image shadow" src="/640a75a9cb193532f4932c8e.png">
+            <p><b>Katharina McFarland</b></p>
+            <p>
+              Former Assistant Secretary of Defense<br>
+              <a href="https://www.nscai.gov/commissioners/hon-katherina-mcfarland/" target="_blank">Link to bio</a>
+            </p>
+          </div>
+
         </div>
       </section>
       <section class="dark-white template-1 gap-medium">
