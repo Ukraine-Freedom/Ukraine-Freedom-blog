@@ -5,6 +5,9 @@ i.icon {
   display: inline-block;
   color: var(--color-black);
 }
+i.icon.brand{
+  font-family: Font Awesome\ 5 Brands;
+}
 i.icon-checkmark:before {
   content: '\f058';
 }
@@ -44,9 +47,46 @@ i.icon-search:before {
 i.icon-carry:before {
   content: '\f4ce';
 }
-
-
-i.yellow-icon {
+i.icon-coins:before {
+  content: '\f51e';
+}
+i.icon-donate:before {
+  content: '\f4b9';
+}
+i.icon-school:before {
+  content: '\f549';
+}
+i.icon-parachute:before {
+  content: '\f4cd';
+}
+i.icon-smile:before {
+  content: '\f118';
+}
+i.icon-quote:before {
+  content: '\f10e';
+}
+i.icon-video:before {
+  content: '\f167';
+}
+i.icon.yellow {
   color: var(--color-yellow);
+}
+i.icon.grey {
+  color: var(--color-gray);
+}
+i.icon.big{
+  font-size: 2.5em;
+}
+i.icon.medium{
   font-size: 2em;
 }
+i.icon.small{
+  font-size: 1.2em;
+}
+i.icon.true-grey{
+  color: var(--color-true-gray);
+}
+i.icon.position{
+margin: 0.5em 0;
+}
+
