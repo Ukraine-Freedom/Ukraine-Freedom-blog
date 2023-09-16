@@ -197,7 +197,18 @@ const { data: { title, description, html } } = await fetch(
     max-width: 27vw;
     padding: 2rem 2.5rem;
   }
-
+  section.follow {
+    padding: 3em 8em;
+  }
+  section.follow > div {
+     min-width: 20%;
+  }
+  section.follow p {
+    color: var(--color-black);
+  }
+  section.follow > div img {
+    height: 70px;
+  }
   @media (max-width: 765px){
     .flexible-row {
       flex-direction: column;
@@ -218,6 +229,10 @@ const { data: { title, description, html } } = await fetch(
     }
     .four-elements-grid{
       grid-template-columns: 1fr;
+    }
+    section.follow.row-flex {
+      flex-direction: column;
+      padding: 3em 0.01em;
     }
   }
 </style>
@@ -508,6 +523,17 @@ const { data: { title, description, html } } = await fetch(
               </a>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="follow row-flex">
+        <p class="left-bigtext">Follow us on social media</p>
+        <div class="row-flex">
+          <a href="https://twitter.com/UKRAINEFREEDOM7" target="_blank">
+            <img src="/640a8064f174f3d7ec64281d.png">
+          </a>
+          <a href="https://www.instagram.com/ukraine_freedom_project/" target="_blank">
+            <img src="/640a8064f174f3885c64281e.png">
+          </a>
         </div>
       </section>
       <section class="dark-white template-1 gap-medium">
