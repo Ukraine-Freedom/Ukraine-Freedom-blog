@@ -69,9 +69,6 @@ header button.primary {
 .gap-medium {
   gap: 2em;
 }
-.align-center{
-  align-items: center;
-}
 
 .video-js {
   display: block;
@@ -96,8 +93,6 @@ header button.primary {
   padding: 0 1.5em;
 }
 
-
-
 .left-bigtext{
   text-align: left;
   font-size: 30px;
@@ -105,12 +100,6 @@ header button.primary {
   margin-block-end: 0;
   color: var(--color-gray);
   line-height: 1.3em;
-}
-.height-100{
-  height: 100px;
-}
-.width-33{
-  width: 33vw;
 }
 .margin-bottom-small {
   margin-bottom: 1em;
