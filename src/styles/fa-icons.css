@@ -5,7 +5,7 @@ i.icon {
   display: inline-block;
   color: var(--color-black);
 }
-i.icon.brand{
+i.icon.brand {
   font-family: Font Awesome\ 5 Brands;
 }
 i.icon-checkmark:before {
@@ -74,19 +74,15 @@ i.icon.yellow {
 i.icon.grey {
   color: var(--color-gray);
 }
-i.icon.big{
-  font-size: 2.5em;
-}
-i.icon.medium{
-  font-size: 2em;
-}
-i.icon.small{
-  font-size: 1.2em;
-}
 i.icon.true-grey{
   color: var(--color-true-gray);
 }
-i.icon.position{
-margin: 0.5em 0;
+i.icon.big {
+  font-size: 2.5em;
 }
-
+i.icon.medium {
+  font-size: 2em;
+}
+i.icon.small {
+  font-size: 1.2em;
+}

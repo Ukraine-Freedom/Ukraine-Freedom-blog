@@ -6,7 +6,6 @@
   --color-light-blue: #f0f5ff;
   --color-white: white;
   --color-true-gray: rgba(0,0,0,0.3);
-  
 }
 @font-face {
   font-family: 'Inter';
@@ -22,14 +21,11 @@
   font-style: normal;
   font-display: swap;
 }
-
 html, body {
   overflow-x: hidden;
 }
-
 body > .main {
   min-height: calc(100vh - 35em);
-
 }
 header .logo, footer .logo {
   background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
@@ -50,7 +46,6 @@ header button.primary {
   font-weight: 600;
   cursor: pointer;
 }
-
 .donate-button {
   background: var(--accent);
   padding: 16px 20px;
@@ -62,72 +57,34 @@ header button.primary {
   border-radius: 5px;
   cursor: pointer;
 }
-
-.gap-small {
+.gap-sm {
   gap: 1em;
 }
-.gap-medium {
+.gap-md {
   gap: 2em;
 }
-.align-center{
+.align-center {
   align-items: center;
 }
-
-.video-js {
-  display: block;
-  box-sizing: border-box;
-  color: #fff;
-  background-color: #000;
-  position: relative;
-  padding: 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: normal;
-  font-style: normal;
-  font-family: Arial, Helvetica, sans-serif;
-  word-break: initial;
-}
-
-.four-elements-grid {
-  display:grid; 
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 3.5em;
-  padding: 0 1.5em;
-}
-
-
-
-.left-bigtext{
-  text-align: left;
-  font-size: 30px;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  color: var(--color-gray);
-  line-height: 1.3em;
-}
-.height-hundred{
+.height-100 {
   height: 100px;
 }
-.quarter-width{
+.w-25vw {
   width: 25vw;
 }
-.margin-bottom-small {
+.mb-sm {
   margin-bottom: 1em;
 }
-.margin-bottom-medium {
+.mb-md {
   margin-bottom: 2em;
 }
-.shadow{
+.mv-05 {
+  margin: 0.5em 0;
+}
+.shadow {
   box-shadow: 0 4px 3px #00000026, 0 0 2px #00000026;
 }
-.row-flex{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-img.circle-image{
+img.circle-image {
   width:250px;
   height: auto;
   max-width: 100%;
@@ -137,13 +94,29 @@ img.circle-image{
 section.photo-back {
   position: relative;
   background-color: var(--color-black);
-  padding-top: 12vh;
+  .background {
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  }
+  > h1 {
+    color: var(--color-white);
+    padding: 0 7vw;
+    margin-bottom: 2em;
+  }
+  > p {
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 400;
+  }
 }
-section.photo-back .background {
-  opacity: 0.3;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+img.height-100 {
+  height: 100px;
 }
