@@ -1,27 +1,129 @@
-header, footer {
-  .logo {
-    background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
-    background-size: 60px 60px;
-    width: 60px;
-    height: 60px;
-  }
+:root {
+  --color-gray: #3c404b;
+  --color-yellow: #f6d100;
+  --color-light-gray: #f9fafb;
+  --color-black: #0e0f11;
+  --color-light-blue: #f0f5ff;
+  --color-link-blue: #188bf6;
+  --color-white: white;
+  --color-true-gray: rgba(0,0,0,0.3);
 }
-
-footer .logo {
-  margin-top: 1em;
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+html, body {
+  overflow-x: hidden;
+}
 body > .main {
   min-height: calc(100vh - 35em);
 }
-
+header .logo, footer .logo {
+  background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
+  background-size: 60px 60px;
+  width: 60px;
+  height: 60px;
+}
+footer .logo {
+  margin-top: 1em;
+}
 header button.primary {
   padding: 10px 16px;
   background: none;
-  color: #2337ff;
+  color: var(--accent);
   border-radius: 4px;
-  border: 1px solid #2337ff;
+  border: 1px solid var(--accent);
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+}
+.donate-button {
+  background: var(--accent);
+  padding: 16px 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.gap-sm {
+  gap: 1em;
+}
+.gap-md {
+  gap: 2em;
+}
+.align-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.height-100 {
+  height: 100px;
+}
+.w-25vw {
+  width: 25vw;
+}
+.mb-sm {
+  margin-bottom: 1em;
+}
+.mv-05 {
+  margin: 0.5em 0;
+}
+.shadow {
+  box-shadow: 0 4px 3px #00000026, 0 0 2px #00000026;
+}
+img.circle-image {
+  width:250px;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+section {
+  padding: 20px 0;
+}
+section.photo-back {
+  position: relative;
+  background-color: var(--color-black);
+  .background {
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+  }
+  > h1 {
+    color: var(--color-white);
+    padding: 0 7vw;
+    margin-bottom: 2em;
+  }
+  > p {
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+img.height-100 {
+  height: 100px;
 }

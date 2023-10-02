@@ -1,0 +1,88 @@
+i.icon {
+  font-family: Font Awesome\ 5 Free;
+  font-style: normal;
+  font-weight: 700;
+  display: inline-block;
+  color: var(--color-black);
+}
+i.icon.brand {
+  font-family: Font Awesome\ 5 Brands;
+}
+i.icon-checkmark:before {
+  content: '\f058';
+}
+i.icon-female:before {
+  content: '\f182';
+}
+i.icon-cogs:before {
+  content: '\f085';
+}
+i.icon-landmark:before {
+  content: '\f66f';
+}
+i.icon-hospital:before {
+  content: '\f80d';
+}
+i.icon-fire:before {
+  content: '\f7e4';
+}
+i.icon-utensils:before {
+  content: '\f2e7';
+}
+i.icon-plug:before {
+  content: '\f1e6';
+}
+i.icon-battery:before {
+  content: '\f5df';
+}
+i.icon-satellite:before {
+  content: '\f7c0';
+}
+i.icon-hand:before {
+  content: '\f4c0';
+}
+i.icon-search:before {
+  content: '\f688';
+}
+i.icon-carry:before {
+  content: '\f4ce';
+}
+i.icon-coins:before {
+  content: '\f51e';
+}
+i.icon-donate:before {
+  content: '\f4b9';
+}
+i.icon-school:before {
+  content: '\f549';
+}
+i.icon-parachute:before {
+  content: '\f4cd';
+}
+i.icon-smile:before {
+  content: '\f118';
+}
+i.icon-quote:before {
+  content: '\f10e';
+}
+i.icon-video:before {
+  content: '\f167';
+}
+i.icon.yellow {
+  color: var(--color-yellow);
+}
+i.icon.grey {
+  color: var(--color-gray);
+}
+i.icon.true-grey{
+  color: var(--color-true-gray);
+}
+i.icon.big {
+  font-size: 2.5em;
+}
+i.icon.medium {
+  font-size: 2em;
+}
+i.icon.small {
+  font-size: 1.2em;
+}
