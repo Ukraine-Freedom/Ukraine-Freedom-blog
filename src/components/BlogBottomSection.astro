@@ -3,15 +3,8 @@
 ---
 <style>
   .blog-bottom-section {
-    background: var(--color-black);
     height: 400px;
-    position: relative;
     .background {
-      opacity: .3;
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 100%;
       background: url("/640894e1b423a7769f04895e.jpeg") no-repeat 50% center;
       background-size: cover;
     }
@@ -41,11 +34,19 @@
       width: 40%;
     }
   }
+  @media (max-width: 765px) {
+    .blog-bottom-section .inner {
+      .left .h3-contrib {
+        padding-top: 1em;
+        font-size: 2em;
+      }
+    }
+  }
 </style>
 
-<div class="blog-bottom-section">
+<section class="photo-back blog-bottom-section">
   <div class="background"></div>
-  <div class="inner">
+  <div class="inner container">
     <div class="left">
       <h3 class="h3-contrib">Your contribution matters!</h3>
       <p class="p-contrib">Make your donation today to save more lives tomorrow!</p>
@@ -58,4 +59,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
