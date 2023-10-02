@@ -41,8 +41,9 @@ const { data: { title, description, html } } = await fetch(
       padding: 2rem 3rem;
       font-size: 26px;
       font-weight: 400;
-      color: var(--color-gray);
       line-height: 1.3em;
+      text-align: center;
+      flex: 1;
     }
     > p {
       font-size: 24px;
@@ -54,6 +55,7 @@ const { data: { title, description, html } } = await fetch(
     padding: 0 2%;
     border-radius: 20px;
     box-shadow: 0 6px 6px 0 rgba(var(--black),0.3);
+    background-color: var(--color-light-blue);
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -62,58 +64,52 @@ const { data: { title, description, html } } = await fetch(
       height: auto;
     }
     h6 {
-      font-size:30px;
+      font-size: 30px;
       font-weight: 400;
       color: var(--color-gray);
     }
   }
-  .three-cards-block .card {
-    background-color: var(--color-light-blue);
-  }
-  .card {
-    background-color: var(--color-light-blue);
-  }
-  section.humanitarian {
-    h1 {
-      font-weight: 700;
-      line-height: 1.3em;
-    }
-    p {
-      font-size: 24px;
-      color: var(--color-gray);
-      font-weight: 400;
+  section.section-first {
+    color: var(--color-gray);
+    .flexible-row > div {
+      text-align: left;
     }
   }
-  section.since-march .background {
+  section.section-second, section.section-third, section.section-fourth, section.section-fifth, section.section-sixth,
+  section.section-seventh, section.section-eighth, section.section-ninth, section.section-tenth, section.section-eleventh,
+  section.section-twelfth, section.section-fourteenth {
+    padding: 80px 0;
+  }
+  section.section-second h1, section.section-third h1, section.section-fourth h1, section.section-fifth h1,
+  section.section-sixth h1, section.section-seventh h1, section.section-eighth h1, section.section-ninth h1,
+  section.section-eleventh h1, section.section-twelfth h1, section.section-fourteenth h1 {
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 40px;
+  }
+  section.section-second p, section.section-third p, section.section-fifth p, section.section-sixth p,
+  section.section-seventh p, section.section-eleventh p {
+    font-size: 24px;
+    color: var(--color-gray);
+    font-weight: 400;
+    text-align: center;
+  }
+  section.section-third p {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  section.section-fourth, section.section-fourth h1, section.section-eighth h1 {
+    color: var(--color-white);
+  }
+  section.section-fourth .background {
     background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
     background-size: cover;
   }
-  .background-2 {
-    background: url("/6408954376419e90066021a7.jpeg") no-repeat 50% center;
+  section.section-fifth h4 {
+    font-size: 30px;
+    height: 70px;
   }
-  section.three-cards-block {
-    margin-bottom: 8vh;
-    .flexible-row {
-      width: 100vw;
-    }
-    .card {
-      padding: 3em 1em 1.5em 1em;
-      flex: 1;
-    }
-    p {
-      font-size: 24px;
-      margin-block-start: 0;
-      margin-block-end: 0;
-    }
-    h4 {
-      font-size: 30px;
-      font-weight: 700;
-      line-height: 1.3em;
-      margin: 0;
-    }
-  }
-  section.donation {
-    gap: 1em;
+  section.section-sixth {
     .flexible-row > div {
       max-width: 12vw;
       padding: 0.5em 1em;
@@ -122,7 +118,7 @@ const { data: { title, description, html } } = await fetch(
       }
     }
   }
-  section.military {
+  section.section-seventh {
     margin-bottom: 2em;
     h4 {
       font-size: 30px;
@@ -137,17 +133,51 @@ const { data: { title, description, html } } = await fetch(
       padding: 2rem 2.5rem;
     }
   }
-  section.follow {
-    padding: 3em 8em;
-    > div {
-      min-width: 20%;
-      img {
-        height: 70px;
-      }
+  section.section-eighth .background {
+    background: url("/6408954376419e90066021a7.jpeg") no-repeat 50% center;
+    background-size: cover;
+  }
+  section.section-eighth h6 {
+    font-weight: normal;
+    font-size: 30px;
+    color: var(--color-gray);
+  }
+  section.section-eighth .icon-video {
+    cursor: pointer;
+  }
+  section.section-ninth > .container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3.5em;
+    padding: 0 1.5em;
+  }
+  section.section-eleventh p {
+    margin-bottom: 20px;
+  }
+  section.section-eleventh a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--color-link-blue);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
-    p {
-      color: var(--color-black);
-    }
+  }
+  section.section-thirteenth p {
+    display: flex;
+    padding-left: 60px;
+    font-size: 28px;
+  }
+  section.section-thirteenth .flex-end {
+    justify-content: flex-end;
+  }
+  section.section-thirteenth img {
+      height: 70px;
+  }
+  div.donate {
+    text-align: center;
+    margin: 30px 0;
   }
   .video-js {
     display: block;
@@ -162,13 +192,6 @@ const { data: { title, description, html } } = await fetch(
     font-style: normal;
     font-family: Arial, Helvetica, sans-serif;
     word-break: initial;
-  }
-  section.trident-circle > .container{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 3.5em;
-    padding: 0 1.5em;
   }
   .left-bigtext {
     text-align: left;
@@ -189,14 +212,17 @@ const { data: { title, description, html } } = await fetch(
         max-width: 100vw;
       }
     }
-    section.template-1 {
-      padding:20px 0;
+    section.section-sixth {
+      .flexible-row > div {
+        max-width: 100vw;
+      }
     }
-    .w-25vw {
-      width: 100vw;
-    }
-    .four-elements-grid > .container {
+    section.section-ninth > .container {
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+    section.section-thirteenth p {
+      padding-left: 20px;
     }
   }
 </style>
@@ -210,25 +236,27 @@ const { data: { title, description, html } } = await fetch(
 		<Header title={title} />
 		<div class="main">
 			<Fragment set:html={html} />
-      <section class="blue flexible-row">
-        <div>
-          <i class="icon icon-checkmark" />
-          Help Ukrainian women and children survive
-        </div>
-        <div>
-          <i class="icon icon-checkmark" />
-          Provide key equipment to military volunteers
-        </div>
-        <div>
-          <i class="icon icon-checkmark" />
-          Help end the carnage in Ukraine sooner
+      <section class="blue section-first">
+        <div class="flexible-row container">
+          <div>
+            <i class="icon icon-checkmark" />
+            Help Ukrainian women and children survive
+          </div>
+          <div>
+            <i class="icon icon-checkmark" />
+            Provide key equipment to military volunteers
+          </div>
+          <div>
+            <i class="icon icon-checkmark" />
+            Help end the carnage in Ukraine sooner
+          </div>
         </div>
       </section>
-      <section class="humanitarian">
+      <section class="section-second container">
         <h1>
           Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
         </h1>
-        <div class="flexible-row container">
+        <div class="flexible-row">
           <div>
             <i class="icon icon-female yellow medium" />
             <p>Ukrainian women and children <b>lack food, medicine and shelter</b></p>
@@ -243,20 +271,22 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="dark-white lack-of-aid">
-        <h1>
-          Ukrainians shouldn't struggle with a lack of life-saving aid
-        </h1>
-        <p>
-          We believe that Ukraine is ground zero for freedom. Ukrainians are fighting for their lives and they need life-saving aid now
-        </p>
-        <div>
-          <a href="/#donate">
-            <button class="donate-button">Donate now</button>
-          </a>
+      <section class="dark-white section-third">
+        <div class="container">
+          <h1>
+            Ukrainians shouldn't struggle with a lack of life-saving aid
+          </h1>
+          <p>
+            We believe that Ukraine is ground zero for freedom. Ukrainians are fighting for their lives and they need life-saving aid now
+          </p>
+          <div class="donate">
+            <a href="/#donate">
+              <button class="donate-button">Donate now</button>
+            </a>
+          </div>
         </div>
       </section>
-      <section class="photo-back since-march">
+      <section class="photo-back section-fourth">
         <div class="background"></div>
         <div class="container">
           <h1>
@@ -292,7 +322,7 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="how-you-can-help">
+      <section class="section-fifth">
         <h1>
           Here’s how you can help us support Ukrainians
         </h1>
@@ -325,47 +355,49 @@ const { data: { title, description, html } } = await fetch(
             </div>
           </div>
         </div>
-        <div>
+        <div class="donate">
           <a href="/#donate">
             <button class="donate-button">Donate now</button>
           </a>
         </div>
       </section>
-      <section class="dark-white donation">
-      <h1>
-        Here's how your donations save lives
-      </h1>
-      <p>
-        The Ukraine Freedom Project has a network of trusted Ukrainians to whom we send aid. We go to the front to make sure your donations are being spent well
-      </p>
-      <div class="flexible-row container">
-        <div>
-          <i class="icon icon-coins yellow medium" />
-          <p>1. You make a donation</p>
+      <section class="dark-white section-sixth">
+        <div class="container">
+          <h1>
+            Here's how your donations save lives
+          </h1>
+          <p>
+            The Ukraine Freedom Project has a network of trusted Ukrainians to whom we send aid. We go to the front to make sure your donations are being spent well
+          </p>
+          <div class="flexible-row">
+            <div>
+              <i class="icon icon-coins yellow medium" />
+              <p>1. You make a donation</p>
+            </div>
+            <div>
+              <i class="icon icon-donate yellow medium" />
+              <p>2. Ukraine Freedom Project collects funds</p>
+            </div>
+            <div>
+              <i class="icon icon-school yellow medium" />
+              <p>3. We buy and deliver life-saving aid</p>
+            </div>
+            <div>
+              <i class="icon icon-parachute yellow medium" />
+              <p>4. We verify your aid goes to people in need</p>
+            </div>
+            <div>
+              <i class="icon icon-smile yellow medium" />
+              <p>5. Ukrainians are fully equipped to survive and win this war</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <i class="icon icon-donate yellow medium" />
-          <p>2. Ukraine Freedom Project collects funds</p>
-        </div>
-        <div>
-          <i class="icon icon-school yellow medium" />
-          <p>3. We buy and deliver life-saving aid</p>
-        </div>
-        <div>
-          <i class="icon icon-parachute yellow medium" />
-          <p>4. We verify your aid goes to people in need</p>
-        </div>
-        <div>
-          <i class="icon icon-smile yellow medium" />
-          <p>5. Ukrainians are fully equipped to survive and win this war</p>
-        </div>
-      </div>
       </section>
-      <section class="military">
+      <section class="section-seventh container">
         <h1>
           Your donations will ease Ukrainian civilian suffering and help military volunteers
         </h1>
-        <div class="flexible-row container">
+        <div class="flexible-row">
           <div>
             <img class="mb-sm shadow" src="/640a707f0fb9a98589db0a68.jpeg" loading="lazy">
             <h4>Help women and children</h4>
@@ -382,13 +414,13 @@ const { data: { title, description, html } } = await fetch(
             <p>We take your donations into harm's way to end this war sooner.</p>
           </div>
         </div>
-        <div>
+        <div class="donate">
           <a href="/#donate">
             <button class="donate-button">Donate now</button>
           </a>
         </div>
       </section>
-      <section class="photo-back helped-ukraine">
+      <section class="photo-back section-eighth">
         <div class="background"></div>
         <div class="container">
           <h1>See who we’ve already helped in Ukraine</h1>
@@ -396,7 +428,7 @@ const { data: { title, description, html } } = await fetch(
             <div class="card gap-md">
               <i class="icon icon-quote grey small" />
               <h6><b>Artem,</b> Mariupol police officer turned soldier<br><br></h6>
-              <i class="icon brand icon-video true-grey big mv-05" id="playButton"/>
+              <i class="icon brand icon-video true-grey big mv-05"/>
               <video class="video-js" id="videoPlayer1" controls style="display: none;">
                 <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
                 Your browser does not support the video tag.
@@ -405,7 +437,7 @@ const { data: { title, description, html } } = await fetch(
             <div class="card gap-md">
               <i class="icon icon-quote grey small" />
               <h6><b>Iryna, Taras and Ivan,</b> refugees from the siege of Kyiv</h6>
-              <i class="icon brand icon-video true-grey big mv-05" />
+              <i class="icon brand icon-video true-grey big mv-05"/>
               <video id="videoPlayer2" controls style="display: none;">
                 <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
                 Your browser does not support the video tag.
@@ -414,7 +446,7 @@ const { data: { title, description, html } } = await fetch(
             <div class="card gap-md">
               <i class="icon icon-quote grey small" />
               <h6><b>Olena and Alex,</b> Poltava Down Syndrome community</h6>
-              <i class="icon brand icon-video true-grey big mv-05" />
+              <i class="icon brand icon-video true-grey big mv-05"/>
               <video id="videoPlayer3" controls style="display: none;">
                 <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
                 Your browser does not support the video tag.
@@ -423,7 +455,7 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="trident-circle">
+      <section class="section-ninth">
         <h1>Trident Circle</h1>
         <div class="container mb-sm">
           <img src="/641851c8801746d68efd0366.png" loading="lazy">
@@ -434,25 +466,25 @@ const { data: { title, description, html } } = await fetch(
           <p class="left-bigtext">Trident Circle members will have the opportunity to participate in periodic Zoom calls with Steven and Ukrainians who the Ukraine Freedom Project is helping.<br>
             Real live updates from ground zero for freedom in the world. You can ask questions about what is really going on in Ukraine.<br>
             You can make a monthly donation of <b>$10, $50, $100, $250</b> or any other amount you want.</p>
-            <img class="shadow" src="/640a7c6dcb1935bca59331ea.jpeg" loading="lazy">
+          <img class="shadow" src="/640a7c6dcb1935bca59331ea.jpeg" loading="lazy">
         </div>
-        <div class="mb-md">
+        <div class="donate">
           <a href="/#donate">
             <button class="donate-button">Donate now</button>
           </a>
         </div>
       </section>
-      <section class="blue donate-script">
+      <section class="blue section-tenth">
         <a id="donate"></a>
         <div class="container">
-          <h3>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h3>
+          <h1>Join the community of Ukraine Freedom Project donors and help Ukrainians get their freedom back</h1>
           <center><div class="fr-widget" data-type="badge" data-variant="tower" data-width="450" data-url="https://fnd.us/ukrainefreedomproject"><a href="https://fundrazr.com" target="_blank"><img src="//static.fundrazr.com/widgets/powered-by.png" alt="Powered by FundRazr"></a></div></center>
           <script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();</script>
         </div>
       </section>
-      <section class="board-of-advisors">
+      <section class="section-eleventh">
         <h1>Board of advisors</h1>
-        <div class="flexible-row">
+        <div class="flexible-row container">
           <div>
             <img class="circle-image" src="/640a75a9f174f353436420c3.jpeg" loading="lazy">
             <p><b>Peter Roskam</b></p>
@@ -487,9 +519,9 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="dark-white gap-md media-about-project">
+      <section class="dark-white section-twelfth">
         <h1>Media about Ukraine Freedom Project</h1>
-        <div>
+        <div class="container">
           <div class="flexible-row">
             <div>
               <a href="https://www.washingtonexaminer.com/news/washington-secrets/ex-hill-chief-leads-humanitarian-effort-in-ukraine" target="_blank">
@@ -526,20 +558,22 @@ const { data: { title, description, html } } = await fetch(
           </div>
         </div>
       </section>
-      <section class="follow">
-        <p class="left-bigtext">Follow us on social media</p>
-        <div class="flexible-row">
-          <a href="https://twitter.com/UKRAINEFREEDOM7" target="_blank">
-            <img src="/640a8064f174f3d7ec64281d.png">
-          </a>
-          <a href="https://www.instagram.com/ukraine_freedom_project/" target="_blank">
-            <img src="/640a8064f174f3885c64281e.png">
-          </a>
+      <section class="section-thirteenth">
+        <div class="container flexible-row space-between">
+          <p class="left-bigtext align-center">Follow us on social media</p>
+          <div class="flexible-row flex-end gap-md">
+            <a href="https://twitter.com/UKRAINEFREEDOM7" target="_blank">
+              <img src="/640a8064f174f3d7ec64281d.png">
+            </a>
+            <a href="https://www.instagram.com/ukraine_freedom_project/" target="_blank">
+              <img src="/640a8064f174f3885c64281e.png">
+            </a>
+          </div>
         </div>
       </section>
-      <section class="dark-white gap-md">
+      <section class="dark-white gap-md section-fourteenth">
         <h1>We partner with organizations like...</h1>
-        <div>
+        <div class="container">
           <div class="flexible-row">
             <div>
               <img class="height-100" src="/6405fd0427f37142156916b7.png" loading="lazy">
