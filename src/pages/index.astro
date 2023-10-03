@@ -102,7 +102,7 @@ const { data: { title, description, html } } = await fetch(
     color: var(--color-white);
   }
   section.section-fourth .background {
-    background: url("/6405fba6d6f4795790151a6a.jpeg") no-repeat 50% center;
+    background: url("https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Ffce64ae109c94954ad8f42764dbccfcf") no-repeat 50% center;
     background-size: cover;
   }
   section.section-fifth h4 {
@@ -134,7 +134,7 @@ const { data: { title, description, html } } = await fetch(
     }
   }
   section.section-eighth .background {
-    background: url("/6408954376419e90066021a7.jpeg") no-repeat 50% center;
+    background: url("https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F144d9137e0084304aa519bee8e1def85") no-repeat 50% center;
     background-size: cover;
   }
   section.section-eighth h6 {
@@ -179,20 +179,6 @@ const { data: { title, description, html } } = await fetch(
     text-align: center;
     margin: 30px 0;
   }
-  .video-js {
-    display: block;
-    box-sizing: border-box;
-    color: #fff;
-    background-color: #000;
-    position: relative;
-    padding: 0;
-    font-size: 10px;
-    line-height: 1;
-    font-weight: normal;
-    font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    word-break: initial;
-  }
   .left-bigtext {
     text-align: left;
     font-size: 30px;
@@ -226,11 +212,23 @@ const { data: { title, description, html } } = await fetch(
     }
   }
 </style>
+<script>
+  document.querySelectorAll('i.icon-video').forEach(icon => {
+    icon.addEventListener('click', () => {
+      icon.style.display = 'none';
+      icon.nextElementSibling.style.display = 'block';
+      const player = videojs(icon.nextElementSibling.id);
+      player.play();
+    });
+  });
+</script>
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+    <link href="//vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet">
+    <script is:inline src="//vjs.zencdn.net/8.3.0/video.min.js"></script>
 	</head>
 	<body>
 		<Header title={title} />
@@ -399,17 +397,17 @@ const { data: { title, description, html } } = await fetch(
         </h1>
         <div class="flexible-row">
           <div>
-            <img class="mb-sm shadow" src="/640a707f0fb9a98589db0a68.jpeg" loading="lazy">
+            <img class="mb-sm shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fc962f6b01cc340c38ce055495ac8c5d2" />
             <h4>Help women and children</h4>
             <p>Your $81 donation feeds 3 Ukrainian families for a week. Donate now to help hungry children.</p>
           </div>
           <div>
-            <img class="mb-sm shadow" src="/640a707fcb193511a1932ab6.jpeg" loading="lazy">
+            <img class="mb-sm shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F166b05147d5147b2961d92aaf0ff7e3b" />
             <h4>Help military volunteers</h4>
             <p>With every $250 raised we can buy 1 generator for military volunteers at the front.</p>
           </div>
           <div>
-            <img class="mb-sm shadow" src="/640a707ff174f338a8641e44.jpeg" loading="lazy">
+            <img class="mb-sm shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F2ac8a6e44e154caf92282b0300c4035e" />
             <h4>Help Ukraine win this war</h4>
             <p>We take your donations into harm's way to end this war sooner.</p>
           </div>
@@ -429,8 +427,8 @@ const { data: { title, description, html } } = await fetch(
               <i class="icon icon-quote grey small" />
               <h6><b>Artem,</b> Mariupol police officer turned soldier<br><br></h6>
               <i class="icon brand icon-video true-grey big mv-05"/>
-              <video class="video-js" id="videoPlayer1" controls style="display: none;">
-                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+              <video class="vjs-big-play-centered video-js vjs-default-skin vjs-fluid" id="videoPlayer1" controls playsinline style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="application/x-mpegURL" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -438,8 +436,8 @@ const { data: { title, description, html } } = await fetch(
               <i class="icon icon-quote grey small" />
               <h6><b>Iryna, Taras and Ivan,</b> refugees from the siege of Kyiv</h6>
               <i class="icon brand icon-video true-grey big mv-05"/>
-              <video id="videoPlayer2" controls style="display: none;">
-                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+              <video class="vjs-big-play-centered video-js vjs-default-skin vjs-fluid" controls id="videoPlayer2" style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8e6d29c8c03a1623207_,32,16,00k.mp4.urlset/master.m3u8" type="application/x-mpegURL" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -447,8 +445,8 @@ const { data: { title, description, html } } = await fetch(
               <i class="icon icon-quote grey small" />
               <h6><b>Olena and Alex,</b> Poltava Down Syndrome community</h6>
               <i class="icon brand icon-video true-grey big mv-05"/>
-              <video id="videoPlayer3" controls style="display: none;">
-                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8bfbf27c504223c370c_,53,32,16,00k.mp4.urlset/master.m3u8" type="video/mp4">
+              <video class="vjs-big-play-centered video-js vjs-default-skin vjs-fluid" controls id="videoPlayer3" style="display: none;">
+                <source src="https://content.apisystem.tech/hls/medias/UjVKviKWm2EMqa4e49nB/media/transcoded_videos/640af8edd29c8c2326623209_,53,32,16,00k.mp4.urlset/master.m3u8" type="application/x-mpegURL" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -458,7 +456,7 @@ const { data: { title, description, html } } = await fetch(
       <section class="section-ninth">
         <h1>Trident Circle</h1>
         <div class="container mb-sm">
-          <img src="/641851c8801746d68efd0366.png" loading="lazy">
+          <img src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F86e8314fab184989a8241bb8d754f619" />
           <p class="left-bigtext">You can make a one time donation, or you can commit to being a sustaining member of the Ukraine Freedom Project.<br>
             Our donors have been amazingly generous but the scale of contributions has been unpredictable.<br>
             A regular and consistent source of revenue would enhance our ability to plan, coordinate, source and, ultimately, help more Ukrainians.<br>
@@ -466,7 +464,7 @@ const { data: { title, description, html } } = await fetch(
           <p class="left-bigtext">Trident Circle members will have the opportunity to participate in periodic Zoom calls with Steven and Ukrainians who the Ukraine Freedom Project is helping.<br>
             Real live updates from ground zero for freedom in the world. You can ask questions about what is really going on in Ukraine.<br>
             You can make a monthly donation of <b>$10, $50, $100, $250</b> or any other amount you want.</p>
-          <img class="shadow" src="/640a7c6dcb1935bca59331ea.jpeg" loading="lazy">
+          <img class="shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fae5cf4e36e974a8cbc3bf792b5dd21ed" />
         </div>
         <div class="donate">
           <a href="/#donate">
@@ -486,7 +484,7 @@ const { data: { title, description, html } } = await fetch(
         <h1>Board of advisors</h1>
         <div class="flexible-row container">
           <div>
-            <img class="circle-image" src="/640a75a9f174f353436420c3.jpeg" loading="lazy">
+            <img class="circle-image" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F197f395662d54db89bf51df8be499866" />
             <p><b>Peter Roskam</b></p>
             <p>
               Former US Representative<br>
@@ -494,7 +492,7 @@ const { data: { title, description, html } } = await fetch(
             </p>
           </div>
           <div>
-            <img class="circle-image shadow" src="/640af4eef174f36686646dc5.jpeg" loading="lazy">
+            <img class="circle-image shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F1091ce36f61c420383ff987dc55640cc" />
             <p><b>Julie Meier Wright</b></p>
             <p>
               Former California Secretary of Trade and Commerce<br>
@@ -502,7 +500,7 @@ const { data: { title, description, html } } = await fetch(
             </p>
           </div>
           <div>
-            <img class="circle-image shadow" src="/640a75a9f174f37bcb6420c2.jpeg" loading="lazy">
+            <img class="circle-image shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fb507bfd2a78b46b9a17270366a3ce951" />
             <p><b>Jeffrey Krilla</b></p>
             <p>
               Former Deputy Assistant Secretary of State<br>
@@ -510,7 +508,7 @@ const { data: { title, description, html } } = await fetch(
             </p>
           </div>
           <div>
-            <img class="circle-image shadow" src="/640a75a9cb193532f4932c8e.png" loading="lazy">
+            <img class="circle-image shadow" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fb68d0b0cc12c459dbfd3b83418f01997" />
             <p><b>Katharina McFarland</b></p>
             <p>
               Former Assistant Secretary of Defense<br>
@@ -525,34 +523,34 @@ const { data: { title, description, html } } = await fetch(
           <div class="flexible-row">
             <div>
               <a href="https://www.washingtonexaminer.com/news/washington-secrets/ex-hill-chief-leads-humanitarian-effort-in-ukraine" target="_blank">
-                <img class="height-100" src="/64c7c4e614592c32a0a3cb08.png" loading="lazy">
+                <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F4eb45ea7705d40e390a13c8b622effdf" />
               </a>
             </div>
             <div>
               <a href="https://www.instagram.com/p/CuZ3jYJuPA-/" target="_blank">
-                <img class="height-100" src="/64c7c53314592c1f3ea3cba7.webp" loading="lazy">
+                <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F79a47a494512406ea1654ce6b499d5c4" />
               </a>
             </div>
             <div>
               <a href="https://www.businessinsider.com/american-helping-in-ukraine-steven-moore-rescue-mission-russia-putin-war-2022-4?r=US&IR=T" target="_blank">
-                <img class="height-100" src="/64c7c1cc14592c6736a3c7f7.png" loading="lazy">
+                <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F3cd4c35f6faf4fff9930c89118e203f8" />
               </a>
             </div>
           </div>
           <div class="flexible-row align-center">
             <div>
               <a href="https://www.siriusxm.com/clips/clip/65cfb29a-195e-4b44-91fb-9e855ad51e03/b5ceb0a6-fd26-4050-b462-3c63d7c47c07" target="_blank">
-                <img class="height-100" src="/64c7c27c14592c6d56a3c82b.png" loading="lazy">
+                <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F662ff5dc42ed416ea61997edb2d72235" />
               </a>
             </div>
             <div>
               <a href="https://rollcall.com/2023/03/30/when-russia-invaded-this-former-house-staffer-rushed-to-ukraine/" target="_blank">
-                <img  src="/64c7c2d13b545007a75374e4.png" loading="lazy">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F0a3f298701ed4a52a8f1873982a6f044" />
               </a>
             </div>
             <div>
               <a href="https://www.youtube.com/watch?v=G-eG98pOi0k" target="_blank">
-                <img class="height-100" src="/64c7c30d14592c7bb1a3c865.png" loading="lazy">
+                <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fd6790cd1c2e843d59910da8e1a45b537" />
               </a>
             </div>
           </div>
@@ -563,10 +561,10 @@ const { data: { title, description, html } } = await fetch(
           <p class="left-bigtext align-center">Follow us on social media</p>
           <div class="flexible-row flex-end gap-md">
             <a href="https://twitter.com/UKRAINEFREEDOM7" target="_blank">
-              <img src="/640a8064f174f3d7ec64281d.png">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F42b0ee0e771542dfb1f40d596ffb5cf2" />
             </a>
             <a href="https://www.instagram.com/ukraine_freedom_project/" target="_blank">
-              <img src="/640a8064f174f3885c64281e.png">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F92ed2a4a6f9742b491f5c854b0fd4a14" />
             </a>
           </div>
         </div>
@@ -576,24 +574,24 @@ const { data: { title, description, html } } = await fetch(
         <div class="container">
           <div class="flexible-row">
             <div>
-              <img class="height-100" src="/6405fd0427f37142156916b7.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F094b18d6787d4e3dbe28aa081bd0d1f9" />
             </div>
             <div>
-              <img class="height-100" src="/640a6d8dcb19359230932964.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fba3907f2fe774d7eb84e0a2655f38cd1" />
             </div>
             <div>
-              <img class="height-100" src="/64089031cb19356c8b91fa3a.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2Fd3bc52924c05449bb0689bc0d5bbce85" />
             </div>
           </div>
           <div class="flexible-row align-center">
             <div>
-              <img class="height-100" src="/640a6d8df174f35f01641c8c.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F1fe4f3ac41d44e29aa3b213250ff3a13" />
             </div>
             <div>
-              <img class="height-100" src="/64089031f174f3f4a462dc58.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F7d829fe36db04e9bb792f5bef6463180" />
             </div>
             <div>
-              <img class="height-100" src="/640a6cd0f174f31284641b6c.png" loading="lazy">
+              <img class="height-100" src="https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F9628e87bfcd440f7929cb26faa0e83dd" />
             </div>
           </div>
         </div>

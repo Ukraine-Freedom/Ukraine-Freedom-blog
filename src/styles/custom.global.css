@@ -29,7 +29,7 @@ body > .main {
   min-height: calc(100vh - 35em);
 }
 header .logo, footer .logo {
-  background: url("/64c7c41c14592c2880a3c960.png") no-repeat;
+  background: url("https://cdn.builder.io/api/v1/image/assets%2F04802123bdce4ca098b62cecb2bbd45b%2F8c69893d19994cb29a9712e888d3eccb") no-repeat;
   background-size: 60px 60px;
   width: 60px;
   height: 60px;
