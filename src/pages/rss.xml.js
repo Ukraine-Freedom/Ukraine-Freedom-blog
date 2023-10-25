@@ -7,6 +7,7 @@ export async function GET(context) {
   const { results: posts } = await fetch(
     `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({
       apiKey: builderApiPublicKey,
+      'sort.data.publishDate': -1,
       cachebust: "true",
     }).toString()}`
   )
