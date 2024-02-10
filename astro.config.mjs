@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://freedom-ukraine.netlify.app',
+	site: 'https://ukrainefreedomproject.org/',
 	integrations: [mdx(), sitemap()],
 	vite: {
 		server: {

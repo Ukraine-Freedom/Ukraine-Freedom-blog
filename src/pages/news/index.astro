@@ -3,7 +3,6 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import FormattedDate from '../../components/FormattedDate.astro';
 
 const builderApiPublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_NEWS_MODEL;
@@ -25,7 +24,7 @@ const { results: posts } = await fetch(
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <style>
     main {
-      width: 960px;
+      width: 1200px;
     }
     main h3 {
       text-align: center;
