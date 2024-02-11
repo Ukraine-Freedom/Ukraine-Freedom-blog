@@ -21,7 +21,7 @@ export async function getStaticPaths() {
     props: page,
   }))
 }
-const { data: { title, description, content }} = Astro.props;
+const { data: { title, description, html }} = Astro.props;
 ---
 
 <!doctype html>
@@ -32,7 +32,7 @@ const { data: { title, description, content }} = Astro.props;
 <body>
 <Header title={title} />
 <main>
-  <Fragment set:html={content} />
+  <Fragment set:html={html} />
 </main>
 <Footer />
 </body>
