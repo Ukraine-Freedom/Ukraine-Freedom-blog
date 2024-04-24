@@ -12,6 +12,7 @@ const { results: posts } = await fetch(
     apiKey: builderApiPublicKey,
     'sort.data.publishDate': -1,
     cachebust: "true",
+    limit: 100,
   }).toString()}`
 )
   .then((res) => res.json())
