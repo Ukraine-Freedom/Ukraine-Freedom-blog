@@ -69,12 +69,6 @@ const { data: { title, description, html } } = await fetch(
       color: var(--color-gray);
     }
   }
-  section.section-first {
-    color: var(--color-gray);
-    .flexible-row > div {
-      text-align: left;
-    }
-  }
   section.section-second, section.section-third, section.section-fourth, section.section-fifth, section.section-sixth,
   section.section-seventh, section.section-eighth, section.section-ninth, section.section-tenth, section.section-eleventh,
   section.section-twelfth, section.section-fourteenth {
@@ -234,22 +228,6 @@ const { data: { title, description, html } } = await fetch(
 		<Header title={title} />
 		<div class="main">
 			<Fragment set:html={html} />
-      <section class="blue section-first">
-        <div class="flexible-row container">
-          <div>
-            <i class="icon icon-checkmark" />
-            Help Ukrainian women and children survive
-          </div>
-          <div>
-            <i class="icon icon-checkmark" />
-            Provide key equipment to military volunteers
-          </div>
-          <div>
-            <i class="icon icon-checkmark" />
-            Help end the carnage in Ukraine sooner
-          </div>
-        </div>
-      </section>
       <section class="section-second container">
         <h1>
           Big international organizations get food and medicine into safe parts of Ukraine but we deliver it to trusted Ukrainians at the front
